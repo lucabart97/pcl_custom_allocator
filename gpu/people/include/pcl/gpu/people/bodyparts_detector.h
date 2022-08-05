@@ -47,6 +47,7 @@
 #include "pcl/gpu/people/person_attribs.h"
 
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl
@@ -66,7 +67,7 @@ namespace pcl
         public:
           using Ptr = shared_ptr<RDFBodyPartsDetector>;          
           using ConstPtr = shared_ptr<const RDFBodyPartsDetector>;
-          using BlobMatrix = std::vector<std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >;
+          using BlobMatrix = std::vector<std::vector<Blob2, tk::tk_allocator<Blob2> > >;
           
           using Labels = DeviceArray2D<unsigned char>;
           using Depth = DeviceArray2D<unsigned short>;

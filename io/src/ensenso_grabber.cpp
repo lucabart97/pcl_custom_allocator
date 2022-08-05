@@ -453,7 +453,7 @@ pcl::EnsensoGrabber::estimateCalibrationPatternPose (Eigen::Affine3d &pattern_po
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool
-pcl::EnsensoGrabber::computeCalibrationMatrix (const std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::Affine3d> > &robot_poses,
+pcl::EnsensoGrabber::computeCalibrationMatrix (const std::vector<Eigen::Affine3d, tk::tk_allocator<Eigen::Affine3d> > &robot_poses,
                                                std::string &json,
                                                const std::string setup,
                                                const std::string target,
@@ -466,7 +466,7 @@ pcl::EnsensoGrabber::computeCalibrationMatrix (const std::vector<Eigen::Affine3d
 
   try
   {
-    std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::Affine3d> > robot_poses_mm (robot_poses);
+    std::vector<Eigen::Affine3d, tk::tk_allocator<Eigen::Affine3d> > robot_poses_mm (robot_poses);
     std::vector<std::string> robot_poses_json;
     robot_poses_json.resize (robot_poses.size ());
     for (std::size_t i = 0; i < robot_poses_json.size (); ++i)

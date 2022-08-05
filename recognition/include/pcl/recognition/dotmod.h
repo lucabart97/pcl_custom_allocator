@@ -37,6 +37,7 @@
 
 #pragma once
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <cstddef>
 #include <pcl/pcl_macros.h>

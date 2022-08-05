@@ -48,6 +48,7 @@
 #include <pcl/io/file_grabber.h>
 
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 

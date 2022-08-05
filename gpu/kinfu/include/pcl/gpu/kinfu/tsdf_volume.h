@@ -43,6 +43,7 @@
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 #include <Eigen/Core>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

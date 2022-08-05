@@ -52,6 +52,7 @@
 #include <pcl/point_cloud.h>
 #include <cmath>
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <list>
 

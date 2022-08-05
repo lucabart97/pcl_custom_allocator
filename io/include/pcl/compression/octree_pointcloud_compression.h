@@ -46,6 +46,7 @@
 #include "compression_profiles.h"
 
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 using namespace pcl::octree;

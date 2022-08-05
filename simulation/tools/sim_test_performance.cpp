@@ -195,7 +195,7 @@ display()
     }
   }
 
-  std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> poses;
+  std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>> poses;
   std::vector<float> scores;
 
   // Render a single pose for visualization

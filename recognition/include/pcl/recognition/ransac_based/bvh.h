@@ -48,6 +48,7 @@
 #include <pcl/pcl_exports.h>
 #include <cstring>
 #include <algorithm>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <list>
 

@@ -444,7 +444,7 @@ pcl::ihs::ICP::minimizePointPlane (const CloudNormal& cloud_source,
   pcl::compute3DCentroid (cloud_target, c_t); c_t.w () = 1.f;
 
   // The normals are only needed for the target
-  using Vec4Xf = std::vector <Eigen::Vector4f, Eigen::aligned_allocator <Eigen::Vector4f> >;
+  using Vec4Xf = std::vector <Eigen::Vector4f, tk::tk_allocator <Eigen::Vector4f> >;
   Vec4Xf xyz_s, xyz_t, nor_t;
   xyz_s.reserve (n);
   xyz_t.reserve (n);

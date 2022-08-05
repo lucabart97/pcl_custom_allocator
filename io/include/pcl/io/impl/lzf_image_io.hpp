@@ -46,6 +46,7 @@
 #include <cstdint>
 #include <limits>
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #define CLIP_CHAR(c) static_cast<unsigned char> ((c)>255?255:(c)<0?0:(c))

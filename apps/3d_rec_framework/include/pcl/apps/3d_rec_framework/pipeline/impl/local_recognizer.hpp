@@ -196,7 +196,7 @@ pcl::rec_3d_framework::LocalRecognitionPipeline<Distance, PointInT, FeatureT>::
 
   models_.reset(new std::vector<ModelT>);
   transforms_.reset(
-      new std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>);
+      new std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>);
 
   PointInTPtr processed;
   typename pcl::PointCloud<FeatureT>::Ptr signatures(new pcl::PointCloud<FeatureT>());
@@ -429,12 +429,12 @@ pcl::rec_3d_framework::LocalRecognitionPipeline<Distance, PointInT, FeatureT>::
 
     std::shared_ptr<std::vector<ModelT>> models_temp;
     std::shared_ptr<
-        std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>>
+        std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>>
         transforms_temp;
 
     models_temp.reset(new std::vector<ModelT>);
     transforms_temp.reset(
-        new std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>);
+        new std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>);
 
     for (std::size_t i = 0; i < models_->size(); i++) {
       if (!mask_hv[i])
@@ -462,7 +462,7 @@ pcl::rec_3d_framework::LocalRecognitionPipeline<Distance, PointInT, FeatureT>::g
     std::map<mv_pair,
              Eigen::Matrix4f,
              std::less<>,
-             Eigen::aligned_allocator<std::pair<const mv_pair, Eigen::Matrix4f>>>::
+             tk::tk_allocator<std::pair<const mv_pair, Eigen::Matrix4f>>>::
         iterator it = poses_cache_.find(pair_model_view);
 
     if (it != poses_cache_.end()) {

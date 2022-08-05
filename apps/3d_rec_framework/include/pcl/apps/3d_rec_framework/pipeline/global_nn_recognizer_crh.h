@@ -90,7 +90,7 @@ protected:
   std::map<std::pair<std::string, int>,
            Eigen::Matrix4f,
            std::less<>,
-           Eigen::aligned_allocator<
+           tk::tk_allocator<
                std::pair<const std::pair<std::string, int>, Eigen::Matrix4f>>>
       poses_cache_;
   std::map<std::pair<std::string, int>, Eigen::Vector3f> centroids_cache_;
@@ -142,7 +142,7 @@ protected:
 
   std::shared_ptr<std::vector<ModelT>> models_;
   std::shared_ptr<
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>>
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>>
       transforms_;
 
 public:
@@ -256,7 +256,7 @@ public:
   }
 
   std::shared_ptr<
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>>
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>>
   getTransforms()
   {
     return transforms_;

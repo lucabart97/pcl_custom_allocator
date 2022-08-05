@@ -131,7 +131,7 @@ public:
     mps.setRefinementComparator(refinement_compare);
 
     std::vector<pcl::PlanarRegion<PointT>,
-                Eigen::aligned_allocator<pcl::PlanarRegion<PointT>>>
+                tk::tk_allocator<pcl::PlanarRegion<PointT>>>
         regions;
     typename pcl::PointCloud<PointT>::Ptr contour(new pcl::PointCloud<PointT>);
     typename pcl::PointCloud<PointT>::Ptr approx_contour(new pcl::PointCloud<PointT>);

@@ -59,12 +59,12 @@ public:
    */
   void
   setDataVector(const std::vector<Eigen::Vector3i,
-                                  Eigen::aligned_allocator<Eigen::Vector3i>> data);
+                                  tk::tk_allocator<Eigen::Vector3i>> data);
 
   /** The associated color of the data. */
   void
   setColorVector(const std::vector<Eigen::Vector3i,
-                                   Eigen::aligned_allocator<Eigen::Vector3i>> color);
+                                   tk::tk_allocator<Eigen::Vector3i>> color);
 
   void
   setUnaryEnergy(const std::vector<float> unary);
@@ -85,8 +85,8 @@ public:
 
   void
   addPairwiseNormals(
-      std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i>>& coord,
-      std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>>& normals,
+      std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i>>& coord,
+      std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>>& normals,
       float sx,
       float sy,
       float sz,
@@ -138,10 +138,10 @@ protected:
   int N_, M_;
 
   /** Data vector */
-  std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i>> data_;
+  std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i>> data_;
 
   /** Color vector */
-  std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i>> color_;
+  std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i>> color_;
 
   /** CRF unary potentials */
   /** TODO: double might use to much memory */

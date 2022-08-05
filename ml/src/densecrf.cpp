@@ -55,7 +55,7 @@ pcl::DenseCrf::~DenseCrf()
 
 void
 pcl::DenseCrf::setDataVector(
-    const std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i>> data)
+    const std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i>> data)
 {
   xyz_ = true;
   data_ = data;
@@ -63,7 +63,7 @@ pcl::DenseCrf::setDataVector(
 
 void
 pcl::DenseCrf::setColorVector(
-    const std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i>> color)
+    const std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i>> color)
 {
   rgb_ = true;
   color_ = color;
@@ -126,8 +126,8 @@ pcl::DenseCrf::addPairwiseBilateral(
 
 void
 pcl::DenseCrf::addPairwiseNormals(
-    std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i>>& coord,
-    std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>>& normals,
+    std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i>>& coord,
+    std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>>& normals,
     float sx,
     float sy,
     float sz,

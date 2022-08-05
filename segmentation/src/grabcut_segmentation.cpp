@@ -40,6 +40,7 @@
 #include <pcl/segmentation/grabcut_segmentation.h>
 
 #include <cassert>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <map>
 #include <algorithm>

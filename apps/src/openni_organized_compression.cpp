@@ -47,6 +47,7 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 using boost::asio::ip::tcp;

@@ -49,6 +49,7 @@
 #include <pcl/apps/in_hand_scanner/opengl_viewer.h>
 
 #include <mutex>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <string>
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/point_types.h>

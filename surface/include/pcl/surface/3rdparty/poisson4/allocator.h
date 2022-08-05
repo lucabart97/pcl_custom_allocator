@@ -28,6 +28,7 @@ DAMAGE.
 
 #ifndef ALLOCATOR_INCLUDED
 #define ALLOCATOR_INCLUDED
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

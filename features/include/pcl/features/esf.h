@@ -43,6 +43,7 @@
 #include <pcl/features/feature.h>
 #define GRIDSIZE 64
 #define GRIDSIZE_H GRIDSIZE/2
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

@@ -52,7 +52,7 @@ namespace pcl
       /** \brief Centroid of the input_view_ */
       Eigen::Vector3f centroid_input_;
       /** \brief transforms from model view to input view */
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > transforms_;
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > transforms_;
       /** \brief Allowed maximum number of peaks  */
       int max_peaks_;
       /** \brief Quantile of peaks after sorting to be checked  */
@@ -112,7 +112,7 @@ namespace pcl
       /** \brief returns the computed transformations
        * \param[out] transforms transformations
        */
-      void getTransforms(std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > & transforms) {
+      void getTransforms(std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > & transforms) {
         transforms = transforms_;
       }
 

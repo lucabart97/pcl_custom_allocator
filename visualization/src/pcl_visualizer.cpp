@@ -3607,7 +3607,7 @@ pcl::visualization::PCLVisualizer::renderViewTesselatedSphere (
                                                                int xres,
                                                                int yres,
                                                                pcl::PointCloud<pcl::PointXYZ>::CloudVectorType &clouds,
-                                                               std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<
+                                                               std::vector<Eigen::Matrix4f, tk::tk_allocator<
                                                                Eigen::Matrix4f> > & poses,
                                                                std::vector<float> & enthropies, int tesselation_level,
                                                                float view_angle, float radius_sphere, bool use_vertices)
@@ -3720,7 +3720,7 @@ pcl::visualization::PCLVisualizer::renderViewTesselatedSphere (
   // Get camera positions
   vtkPolyData *sphere = subdivide->GetOutput ();
 
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > cam_positions;
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > cam_positions;
   if (!use_vertices)
   {
     vtkSmartPointer<vtkCellArray> cells_sphere = sphere->GetPolys ();

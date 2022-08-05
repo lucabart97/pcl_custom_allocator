@@ -85,7 +85,7 @@ public:
 
     model.views_.reset(new std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr>);
     model.poses_.reset(
-        new std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>);
+        new std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>);
     model.self_occlusions_.reset(new std::vector<float>);
     model.assembled_.reset(new pcl::PointCloud<pcl::PointXYZ>);
     uniform_sampling(model_path, 100000, *model.assembled_, model_scale_);
@@ -175,7 +175,7 @@ public:
       render_views.generateViews();
 
       std::vector<typename PointCloud<PointInT>::Ptr> views_xyz_orig;
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>> poses;
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>> poses;
       std::vector<float> entropies;
 
       render_views.getViews(views_xyz_orig);
@@ -184,7 +184,7 @@ public:
 
       model.views_.reset(new std::vector<typename PointCloud<PointInT>::Ptr>());
       model.poses_.reset(new std::vector<Eigen::Matrix4f,
-                                         Eigen::aligned_allocator<Eigen::Matrix4f>>());
+                                         tk::tk_allocator<Eigen::Matrix4f>>());
       model.self_occlusions_.reset(new std::vector<float>());
 
       for (std::size_t i = 0; i < views_xyz_orig.size(); i++) {

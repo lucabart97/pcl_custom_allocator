@@ -395,7 +395,7 @@ PolynomialCalculationsT<real>::solveQuarticEquation (real a, real b, real c, rea
 template<typename real>
 inline pcl::BivariatePolynomialT<real>
 PolynomialCalculationsT<real>::bivariatePolynomialApproximation (
-  std::vector<Eigen::Matrix<real, 3, 1>, Eigen::aligned_allocator<Eigen::Matrix<real, 3, 1> > >& samplePoints, unsigned int polynomial_degree, bool& error) const
+  std::vector<Eigen::Matrix<real, 3, 1>, tk::tk_allocator<Eigen::Matrix<real, 3, 1> > >& samplePoints, unsigned int polynomial_degree, bool& error) const
 {
   pcl::BivariatePolynomialT<real> ret;
   error = bivariatePolynomialApproximation (samplePoints, polynomial_degree, ret);
@@ -406,7 +406,7 @@ PolynomialCalculationsT<real>::bivariatePolynomialApproximation (
 template<typename real>
 inline bool
 PolynomialCalculationsT<real>::bivariatePolynomialApproximation (
-  std::vector<Eigen::Matrix<real, 3, 1>, Eigen::aligned_allocator<Eigen::Matrix<real, 3, 1> > >& samplePoints, unsigned int polynomial_degree,
+  std::vector<Eigen::Matrix<real, 3, 1>, tk::tk_allocator<Eigen::Matrix<real, 3, 1> > >& samplePoints, unsigned int polynomial_degree,
   pcl::BivariatePolynomialT<real>& ret) const
 {
   const auto parameters_size = BivariatePolynomialT<real>::getNoOfParametersFromDegree (polynomial_degree);

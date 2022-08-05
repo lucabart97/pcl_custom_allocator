@@ -43,6 +43,7 @@
 #include <pcl/point_cloud.h>
 #include <pcl/common/point_tests.h> // for pcl::isFinite
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <limits>
 #include <cassert>

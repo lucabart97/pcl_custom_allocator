@@ -58,6 +58,7 @@
 #include <vtkRenderWindow.h>
 #include <vtkTransform.h>
 #include <cstdio>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <list>
 #include <thread>

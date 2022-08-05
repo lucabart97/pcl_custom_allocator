@@ -37,6 +37,7 @@
 #pragma once
 
 #include <cstdint> // uint8_t, uint16_t
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <pcl/pcl_exports.h> // for PCL_EXPORTS
 

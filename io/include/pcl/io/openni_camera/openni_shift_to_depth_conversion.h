@@ -42,6 +42,7 @@
 #ifdef HAVE_OPENNI
 
 #include <cstdint>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <limits>
 

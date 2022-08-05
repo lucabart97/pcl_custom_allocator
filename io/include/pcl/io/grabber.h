@@ -43,6 +43,7 @@
 #include <string>
 #include <typeinfo>
 #include <tuple>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <sstream>
 #include <pcl/pcl_macros.h>

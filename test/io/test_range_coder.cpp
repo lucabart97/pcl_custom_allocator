@@ -43,6 +43,7 @@
 #include <pcl/compression/impl/entropy_range_coder.hpp>
 
 #include <pcl/test/gtest.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <sstream>
 

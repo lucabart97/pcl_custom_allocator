@@ -39,6 +39,7 @@
 
 #include <functional>
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/console/parse.h>

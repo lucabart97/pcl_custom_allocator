@@ -372,7 +372,7 @@ pcl::UnaryClassifier<PointT>::train (pcl::PointCloud<pcl::FPFHSignature33>::Ptr 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename PointT> void
 pcl::UnaryClassifier<PointT>::trainWithLabel (
-    std::vector<pcl::PointCloud<pcl::FPFHSignature33>, Eigen::aligned_allocator<pcl::PointCloud<pcl::FPFHSignature33> > > &output)
+    std::vector<pcl::PointCloud<pcl::FPFHSignature33>, tk::tk_allocator<pcl::PointCloud<pcl::FPFHSignature33> > > &output)
 {
   // find clusters
   std::vector<int> cluster_numbers;

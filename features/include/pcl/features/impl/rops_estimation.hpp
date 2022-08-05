@@ -244,7 +244,7 @@ pcl::ROPSEstimation <PointInT, PointOutT>::computeLRF (const PointInT& point, co
 {
   std::size_t number_of_triangles = local_triangles.size ();
 
-  std::vector<Eigen::Matrix3f, Eigen::aligned_allocator<Eigen::Matrix3f> > scatter_matrices;
+  std::vector<Eigen::Matrix3f, tk::tk_allocator<Eigen::Matrix3f> > scatter_matrices;
   std::vector <float> triangle_area (number_of_triangles), distance_weight (number_of_triangles);
 
   scatter_matrices.reserve (number_of_triangles);

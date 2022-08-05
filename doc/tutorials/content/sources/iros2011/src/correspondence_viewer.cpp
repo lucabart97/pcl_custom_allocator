@@ -1,5 +1,6 @@
 #include "typedefs.h"
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <string>
 #include <sstream>

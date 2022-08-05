@@ -44,6 +44,7 @@
 #include <pcl/features/esf.h>
 #include <pcl/common/distances.h>
 #include <pcl/common/transforms.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <ctime> // for time
 

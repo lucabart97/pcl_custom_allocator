@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iostream>
 #include <thread>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/common/common.h>

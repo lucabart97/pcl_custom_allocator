@@ -86,7 +86,7 @@ class PCL_EXPORTS LocalRecognitionPipeline {
   std::map<std::pair<std::string, int>,
            Eigen::Matrix4f,
            std::less<>,
-           Eigen::aligned_allocator<
+           tk::tk_allocator<
                std::pair<const std::pair<std::string, int>, Eigen::Matrix4f>>>
       poses_cache_;
   std::map<std::pair<std::string, int>, typename pcl::PointCloud<PointInT>::Ptr>
@@ -97,7 +97,7 @@ class PCL_EXPORTS LocalRecognitionPipeline {
 
   std::shared_ptr<std::vector<ModelT>> models_;
   std::shared_ptr<
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>>
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>>
       transforms_;
 
   int kdtree_splits_;
@@ -266,7 +266,7 @@ public:
   }
 
   std::shared_ptr<
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>>
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>>
   getTransforms()
   {
     return transforms_;

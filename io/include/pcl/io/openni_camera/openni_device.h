@@ -54,6 +54,7 @@
 #include <map>
 #include <mutex>
 #include <thread>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 /// @todo Get rid of all exception-specifications, these are useless and soon to be deprecated

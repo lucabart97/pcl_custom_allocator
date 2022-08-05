@@ -62,7 +62,7 @@ namespace pcl
     template <typename PointT, typename PointNT> inline void
     computeApproximateCovariances(const pcl::PointCloud<PointT>& cloud,
                                   const pcl::PointCloud<PointNT>& normals,
-                                  std::vector<Eigen::Matrix3d, Eigen::aligned_allocator<Eigen::Matrix3d> >& covariances,
+                                  std::vector<Eigen::Matrix3d, tk::tk_allocator<Eigen::Matrix3d> >& covariances,
                                   double epsilon = 0.001)
     {
       assert(cloud.size() == normals.size());
@@ -99,4 +99,4 @@ namespace pcl
 }
 
 #define PCL_INSTANTIATE_computeApproximateCovariances(T,NT) template PCL_EXPORTS void pcl::features::computeApproximateCovariances<T,NT> \
-    (const pcl::PointCloud<T>&, const pcl::PointCloud<NT>&, std::vector<Eigen::Matrix3d, Eigen::aligned_allocator<Eigen::Matrix3d>>&, double);
+    (const pcl::PointCloud<T>&, const pcl::PointCloud<NT>&, std::vector<Eigen::Matrix3d, tk::tk_allocator<Eigen::Matrix3d>>&, double);

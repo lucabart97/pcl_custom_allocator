@@ -75,7 +75,7 @@ namespace pcl
       };
       
       // =====TYPEDEFS=====
-      using PoseEstimatesVector = std::vector<PoseEstimate, Eigen::aligned_allocator<PoseEstimate> >;
+      using PoseEstimatesVector = std::vector<PoseEstimate, tk::tk_allocator<PoseEstimate> >;
 
       
       // =====STATIC METHODS=====

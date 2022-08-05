@@ -42,6 +42,7 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {
@@ -104,9 +105,9 @@ public:
       const OctreePointCloud<PointT, LeafContainerT, BranchContainerT, OctreeT>>;
 
   // Eigen aligned allocator
-  using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT>>;
+  using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT>>;
   using AlignedPointXYZVector =
-      std::vector<PointXYZ, Eigen::aligned_allocator<PointXYZ>>;
+      std::vector<PointXYZ, tk::tk_allocator<PointXYZ>>;
 
   /** \brief Provide a pointer to the input data set.
    * \param[in] cloud_arg the const boost shared pointer to a PointCloud message

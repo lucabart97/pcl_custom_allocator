@@ -49,6 +49,7 @@
 #include <pcl/io/openni_camera/openni_ir_image.h>
 #include <pcl/io/openni_camera/openni_image.h>
 #include <map>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include "XnVersion.h"
 

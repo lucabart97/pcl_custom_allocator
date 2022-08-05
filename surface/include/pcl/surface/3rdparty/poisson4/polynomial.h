@@ -29,6 +29,7 @@ DAMAGE.
 #ifndef POLYNOMIAL_INCLUDED
 #define POLYNOMIAL_INCLUDED
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

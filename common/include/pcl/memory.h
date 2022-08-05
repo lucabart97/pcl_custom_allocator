@@ -44,6 +44,7 @@
  */
 
 #include <pcl/type_traits.h>  // for has_custom_allocator
+#include <pcl/tk_allocator.h>
 
 #include <Eigen/Core>  // for EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
@@ -115,7 +116,7 @@ shared_ptr<T> make_shared(Args&&... args);
 template<typename T, typename ... Args>
 std::enable_if_t<has_custom_allocator<T>::value, shared_ptr<T>> make_shared(Args&&... args)
 {
-  return std::allocate_shared<T>(Eigen::aligned_allocator<T>(), std::forward<Args> (args)...);
+  return std::allocate_shared<T>(tk::tk_allocator<T>(), std::forward<Args> (args)...);
 }
 
 template<typename T, typename ... Args>

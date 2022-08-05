@@ -61,6 +61,7 @@
 #include <vtkCubeSource.h>
 #include <vtkPointData.h>
 #include <vtkRenderWindow.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <list>
 #include <cstdlib>

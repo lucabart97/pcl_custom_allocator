@@ -48,6 +48,7 @@
 
 #include <mutex>
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <boost/date_time/posix_time/posix_time.hpp> // for to_iso_string, local_time
 

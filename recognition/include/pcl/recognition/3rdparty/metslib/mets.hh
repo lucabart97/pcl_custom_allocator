@@ -112,6 +112,7 @@
 #include <deque>
 #include <limits>
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <cassert>
 #include <typeinfo>

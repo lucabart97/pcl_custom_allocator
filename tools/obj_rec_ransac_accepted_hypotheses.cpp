@@ -60,6 +60,7 @@
 #include <algorithm>
 #include <cstdio>
 #include <thread>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 using namespace std::chrono_literals;

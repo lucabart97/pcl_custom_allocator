@@ -43,6 +43,7 @@
 #include <pcl/pcl_macros.h>
 
 #include <set>
+#include <pcl/tk_allocator.h>
 #include <vector> // for vector
 
 namespace pcl {

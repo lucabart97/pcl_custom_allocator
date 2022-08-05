@@ -43,6 +43,7 @@
 #include <pcl/common/common.h> // for getMinMax3D
 #include <pcl/common/transforms.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 //////////////////////////////////////////////////////////////////////////////////////////////

@@ -76,7 +76,7 @@ struct MatchingCandidate {
 };
 
 using MatchingCandidates =
-    std::vector<MatchingCandidate, Eigen::aligned_allocator<MatchingCandidate>>;
+    std::vector<MatchingCandidate, tk::tk_allocator<MatchingCandidate>>;
 
 /** \brief Sorting of candidates based on fitness score value. */
 struct by_score {

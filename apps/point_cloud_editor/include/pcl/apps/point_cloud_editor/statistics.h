@@ -40,6 +40,7 @@
 
 #pragma once
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <string>
 #include <pcl/apps/point_cloud_editor/localTypes.h>

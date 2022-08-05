@@ -40,6 +40,7 @@
 #include <pcl/common/common.h>
 
 #include <ostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

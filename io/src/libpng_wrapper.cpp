@@ -40,6 +40,7 @@
 #include <png.h>
 #include <zlib.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <cstdlib>
 #include <cassert>

@@ -686,7 +686,7 @@ namespace pcl
         * \note for efficiency, user must make sure that the saving of the leaf layout is enabled and filtering performed
         */
       inline std::vector<int>
-      getNeighborCentroidIndices (float x, float y, float z, const std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i> > &relative_coordinates) const
+      getNeighborCentroidIndices (float x, float y, float z, const std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i> > &relative_coordinates) const
       {
         Eigen::Vector4i ijk (static_cast<int> (std::floor (x * inverse_leaf_size_[0])), static_cast<int> (std::floor (y * inverse_leaf_size_[1])), static_cast<int> (std::floor (z * inverse_leaf_size_[2])), 0);
         std::vector<int> neighbors;

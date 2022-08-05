@@ -48,6 +48,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 using PointType = pcl::PointXYZ;

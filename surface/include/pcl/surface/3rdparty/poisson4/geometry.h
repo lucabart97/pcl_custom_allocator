@@ -35,6 +35,7 @@ DAMAGE.
 
 #include <pcl/pcl_macros.h>
 #include <math.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <unordered_map>
 

@@ -1309,7 +1309,7 @@ namespace pcl
 
 ////////////////////////////////////////////////////////////////////////////////
     template<typename ContainerT, typename PointT> void
-    OutofcoreOctreeBaseNode<ContainerT, PointT>::getOccupiedVoxelCentersRecursive (std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &voxel_centers, const std::size_t query_depth)
+    OutofcoreOctreeBaseNode<ContainerT, PointT>::getOccupiedVoxelCentersRecursive (std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &voxel_centers, const std::size_t query_depth)
     {
       if (this->depth_ < query_depth){
         if (num_children_ > 0)

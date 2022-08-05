@@ -42,7 +42,7 @@ class OutofcoreCloud : public Object
 //    using OctreeBreadthFirstIterator = pcl::outofcore::OutofcoreBreadthFirstIterator<>;
 
     using OctreeDiskPtr = OctreeDisk::Ptr;
-    using AlignedPointT = Eigen::aligned_allocator<PointT>;
+    using AlignedPointT = tk::tk_allocator<PointT>;
 
 
 

@@ -56,7 +56,7 @@ public:
   void
   computeLikelihoods(
       float* reference,
-      std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> poses,
+      std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>> poses,
       std::vector<float>& scores);
 
   /** Set the basic camera intrinsic parameters. */
@@ -237,11 +237,11 @@ private:
 
   void
   render(const std::vector<Eigen::Isometry3d,
-                           Eigen::aligned_allocator<Eigen::Isometry3d>>& poses);
+                           tk::tk_allocator<Eigen::Isometry3d>>& poses);
 
   void
   drawParticles(std::vector<Eigen::Isometry3d,
-                            Eigen::aligned_allocator<Eigen::Isometry3d>> poses);
+                            tk::tk_allocator<Eigen::Isometry3d>> poses);
 
   void
   applyCameraTransform(const Eigen::Isometry3d& pose);
@@ -304,7 +304,7 @@ private:
 
   gllib::Program::Ptr likelihood_program_;
   GLuint quad_vbo_;
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>> vertices_;
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>> vertices_;
   float* score_buffer_;
   Quad quad_;
   SumReduce sum_reduce_;

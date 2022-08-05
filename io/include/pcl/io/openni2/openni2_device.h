@@ -47,6 +47,7 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 

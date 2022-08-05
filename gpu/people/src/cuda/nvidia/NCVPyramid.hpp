@@ -43,6 +43,7 @@
 #define _ncvpyramid_hpp_
 
 #include <memory>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include "NCV.hpp"
 

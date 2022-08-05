@@ -189,7 +189,7 @@ public:
     unsigned int votes;
   };
   using PoseWithVotesList =
-      std::vector<PoseWithVotes, Eigen::aligned_allocator<PoseWithVotes>>;
+      std::vector<PoseWithVotes, tk::tk_allocator<PoseWithVotes>>;
 
   /// input_ is the model cloud
   using Registration<PointSource, PointTarget>::input_;

@@ -178,7 +178,7 @@ pcl::MinCutSegmentation<PointT>::setNumberOfNeighbours (unsigned int neighbour_n
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-template <typename PointT> std::vector<PointT, Eigen::aligned_allocator<PointT> >
+template <typename PointT> std::vector<PointT, tk::tk_allocator<PointT> >
 pcl::MinCutSegmentation<PointT>::getForegroundPoints () const
 {
   return (foreground_points_);
@@ -196,7 +196,7 @@ pcl::MinCutSegmentation<PointT>::setForegroundPoints (typename pcl::PointCloud<P
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-template <typename PointT> std::vector<PointT, Eigen::aligned_allocator<PointT> >
+template <typename PointT> std::vector<PointT, tk::tk_allocator<PointT> >
 pcl::MinCutSegmentation<PointT>::getBackgroundPoints () const
 {
   return (background_points_);

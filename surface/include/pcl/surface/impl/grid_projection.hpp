@@ -125,7 +125,7 @@ pcl::GridProjection<PointNT>::getBoundingBox ()
 template <typename PointNT> void
 pcl::GridProjection<PointNT>::getVertexFromCellCenter (
     const Eigen::Vector4f &cell_center,
-    std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > &pts) const
+    std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > &pts) const
 {
   assert (pts.size () == 8);
 
@@ -173,7 +173,7 @@ pcl::GridProjection<PointNT>::createSurfaceForCell (const Eigen::Vector3i &index
                                                     pcl::Indices &pt_union_indices)
 {
   // 8 vertices of the cell
-  std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > vertices (8);
+  std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > vertices (8);
 
   // 4 end points that shared by 3 edges connecting the upper left front points
   Eigen::Vector4f pts[4];
@@ -206,8 +206,8 @@ pcl::GridProjection<PointNT>::createSurfaceForCell (const Eigen::Vector3i &index
   // Go through the 3 edges, test whether they are intersected by the surface
   for (std::size_t i = 0; i < 3; ++i)
   {
-    std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > end_pts (2);
-    std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > vect_at_end_pts (2);
+    std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > end_pts (2);
+    std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > vect_at_end_pts (2);
     for (std::size_t j = 0; j < 2; ++j)
     {
       end_pts[j] = pts[I_SHIFT_EDGE[i][j]];
@@ -272,8 +272,8 @@ pcl::GridProjection<PointNT>::getProjection (const Eigen::Vector4f &p,
                                              pcl::Indices &pt_union_indices, Eigen::Vector4f &projection)
 {
   const double projection_distance = leaf_size_ * 3;
-  std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > end_pt (2);
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > end_pt_vect (2);
+  std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > end_pt (2);
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > end_pt_vect (2);
   end_pt[0] = p;
   getVectorAtPoint (end_pt[0], pt_union_indices, end_pt_vect[0]);
   end_pt_vect[0].normalize();
@@ -465,8 +465,8 @@ pcl::GridProjection<PointNT>::getD2AtPoint (const Eigen::Vector4f &p, const Eige
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 template <typename PointNT> bool
-pcl::GridProjection<PointNT>::isIntersected (const std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > &end_pts,
-                                             std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > &vect_at_end_pts,
+pcl::GridProjection<PointNT>::isIntersected (const std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > &end_pts,
+                                             std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > &vect_at_end_pts,
                                              pcl::Indices &pt_union_indices)
 {
   assert (end_pts.size () == 2);
@@ -501,8 +501,8 @@ pcl::GridProjection<PointNT>::isIntersected (const std::vector<Eigen::Vector4f, 
 //////////////////////////////////////////////////////////////////////////////////////////////
 template <typename PointNT> void
 pcl::GridProjection<PointNT>::findIntersection (int level,
-                                                const std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > &end_pts,
-                                                const std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > &vect_at_end_pts,
+                                                const std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > &end_pts,
+                                                const std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > &vect_at_end_pts,
                                                 const Eigen::Vector4f &start_pt,
                                                 pcl::Indices &pt_union_indices,
                                                 Eigen::Vector4f &intersection)
@@ -513,8 +513,8 @@ pcl::GridProjection<PointNT>::findIntersection (int level,
   Eigen::Vector3f vec;
   getVectorAtPoint (start_pt, pt_union_indices, vec);
   double d1 = getD1AtPoint (start_pt, vec, pt_union_indices);
-  std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > new_end_pts (2);
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > new_vect_at_end_pts (2);
+  std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > new_end_pts (2);
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > new_vect_at_end_pts (2);
   if ((std::abs (d1) < 10e-3) || (level == max_binary_search_level_))
   {
     intersection = start_pt;

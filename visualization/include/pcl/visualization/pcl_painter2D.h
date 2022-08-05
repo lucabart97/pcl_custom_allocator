@@ -38,6 +38,7 @@
 
 #pragma once
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <pcl/pcl_exports.h>
 #include <vtkRenderer.h>

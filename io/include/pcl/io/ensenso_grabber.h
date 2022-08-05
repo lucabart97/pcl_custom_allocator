@@ -214,7 +214,7 @@ namespace pcl
        * @note Check the result with @ref getResultAsJson.
        * If you want to permanently store the result, use @ref storeEEPROMExtrinsicCalibration. */
       bool
-      computeCalibrationMatrix (const std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::Affine3d> > &robot_poses,
+      computeCalibrationMatrix (const std::vector<Eigen::Affine3d, tk::tk_allocator<Eigen::Affine3d> > &robot_poses,
                                 std::string &json,
                                 const std::string setup = "Moving",  // Default values: Moving or Fixed
                                 const std::string target = "Hand",  // Default values: Hand or Workspace

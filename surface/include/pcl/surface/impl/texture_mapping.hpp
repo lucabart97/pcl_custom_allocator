@@ -43,13 +43,13 @@
 #include <unordered_set>
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-template<typename PointInT> std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> >
+template<typename PointInT> std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> >
 pcl::TextureMapping<PointInT>::mapTexture2Face (
     const Eigen::Vector3f &p1, 
     const Eigen::Vector3f &p2, 
     const Eigen::Vector3f &p3)
 {
-  std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > tex_coordinates;
+  std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > tex_coordinates;
   // process for each face
   Eigen::Vector3f p1p2 (p2[0] - p1[0], p2[1] - p1[1], p2[2] - p1[2]);
   Eigen::Vector3f p1p3 (p3[0] - p1[0], p3[1] - p1[1], p3[2] - p1[2]);
@@ -154,12 +154,12 @@ pcl::TextureMapping<PointInT>::mapTexture2Mesh (pcl::TextureMesh &tex_mesh)
   Eigen::Vector3f facet[3];
 
   // texture coordinates for each mesh
-  std::vector<std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > >texture_map;
+  std::vector<std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > >texture_map;
 
   for (std::size_t m = 0; m < tex_mesh.tex_polygons.size (); ++m)
   {
     // texture coordinates for each mesh
-    std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > texture_map_tmp;
+    std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > texture_map_tmp;
 
     // processing for each face
     for (std::size_t i = 0; i < tex_mesh.tex_polygons[m].size (); ++i)
@@ -179,7 +179,7 @@ pcl::TextureMapping<PointInT>::mapTexture2Mesh (pcl::TextureMesh &tex_mesh)
       }
 
       // get texture coordinates of each face
-      std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > tex_coordinates = mapTexture2Face (facet[0], facet[1], facet[2]);
+      std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > tex_coordinates = mapTexture2Face (facet[0], facet[1], facet[2]);
       for (const auto &tex_coordinate : tex_coordinates)
         texture_map_tmp.push_back (tex_coordinate);
     }// end faces
@@ -243,12 +243,12 @@ pcl::TextureMapping<PointInT>::mapTexture2MeshUV (pcl::TextureMesh &tex_mesh)
   float z_offset = 0 - z_lowest;
 
   // texture coordinates for each mesh
-  std::vector<std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > >texture_map;
+  std::vector<std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > >texture_map;
 
   for (std::size_t m = 0; m < tex_mesh.tex_polygons.size (); ++m)
   {
     // texture coordinates for each mesh
-    std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > texture_map_tmp;
+    std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > texture_map_tmp;
 
     // processing for each face
     for (std::size_t i = 0; i < tex_mesh.tex_polygons[m].size (); ++i)
@@ -310,7 +310,7 @@ pcl::TextureMapping<PointInT>::mapMultipleTexturesToMeshUV (pcl::TextureMesh &te
     pcl::transformPointCloud (*originalCloud, *camera_transformed_cloud, cam_trans.inverse ());
 
     // vector of texture coordinates for each face
-    std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > texture_map_tmp;
+    std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > texture_map_tmp;
 
     // processing each face visible by this camera
     for (const auto &tex_polygon : tex_mesh.tex_polygons[m])
@@ -338,7 +338,7 @@ pcl::TextureMapping<PointInT>::mapMultipleTexturesToMeshUV (pcl::TextureMesh &te
   }// end cameras
 
   // push on extra empty UV map (for unseen faces) so that obj writer does not crash!
-  std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > texture_map_tmp;
+  std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > texture_map_tmp;
   for (const auto &tex_polygon : tex_mesh.tex_polygons[cams.size ()])
     for (std::size_t j = 0; j < tex_polygon.vertices.size (); ++j)
     {
@@ -868,7 +868,7 @@ pcl::TextureMapping<PointInT>::textureMeshwithMultipleCameras (pcl::TextureMesh 
 
     if (static_cast<int> (mesh.tex_coordinates.size ()) <= current_cam)
     {
-      std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > dummy_container;
+      std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > dummy_container;
       mesh.tex_coordinates.push_back (dummy_container);
     }
     mesh.tex_coordinates[current_cam].resize (3 * visibility.size ());
@@ -922,7 +922,7 @@ pcl::TextureMapping<PointInT>::textureMeshwithMultipleCameras (pcl::TextureMesh 
 
   if (mesh.tex_coordinates.size() <= cameras.size ())
   {
-   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > dummy_container;
+   std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > dummy_container;
    mesh.tex_coordinates.push_back(dummy_container);
    }
 

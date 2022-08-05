@@ -52,6 +52,7 @@
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 

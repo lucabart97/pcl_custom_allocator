@@ -39,6 +39,7 @@
 #ifndef PCL_OCTREE_BASE_HPP
 #define PCL_OCTREE_BASE_HPP
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

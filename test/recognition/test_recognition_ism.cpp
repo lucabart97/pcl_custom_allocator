@@ -85,7 +85,7 @@ TEST (ISM, TrainRecognize)
 
   auto vote_list = ism.findObjects (model, testing_cloud, testing_normals, _class);
   EXPECT_NE (vote_list->getNumberOfVotes (), 0);
-  std::vector<pcl::ISMPeak, Eigen::aligned_allocator<pcl::ISMPeak> > strongest_peaks;
+  std::vector<pcl::ISMPeak, tk::tk_allocator<pcl::ISMPeak> > strongest_peaks;
   vote_list->findStrongestPeaks (strongest_peaks, _class, radius, sigma);
 
   EXPECT_NE (strongest_peaks.size (), 0);

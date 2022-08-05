@@ -30,7 +30,7 @@ protected:
   float refine_factor_;
 
   std::vector<bool> valid_roll_transforms_;
-  std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>> transforms_;
+  std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>> transforms_;
   std::vector<pcl::PointIndices> cluster_indices_;
 
 public:
@@ -71,7 +71,7 @@ public:
 
   void
   getTransformsVec(
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>& trans)
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>& trans)
   {
     trans = transforms_;
   }
@@ -80,7 +80,7 @@ public:
   estimate(PointInTPtr& in,
            PointInTPtr& processed,
            typename pcl::PointCloud<FeatureT>::CloudVectorType& signatures,
-           std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>>&
+           std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>>&
                centroids) override
   {
 

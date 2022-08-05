@@ -41,6 +41,7 @@
 
 #include <pcl/ml/permutohedral.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

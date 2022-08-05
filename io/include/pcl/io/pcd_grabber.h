@@ -53,6 +53,7 @@
 #endif
 
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

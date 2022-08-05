@@ -40,6 +40,7 @@
 
 #include <pcl/filters/normal_space.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <list>
 

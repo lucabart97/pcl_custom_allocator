@@ -41,6 +41,7 @@
 
 #include <pcl/memory.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 
@@ -213,8 +214,8 @@ namespace pcl
       void
       computeIntegralImages (const DataType * data, unsigned row_stride, unsigned element_stride);
 
-      std::vector<ElementType, Eigen::aligned_allocator<ElementType> > first_order_integral_image_;
-      std::vector<SecondOrderType, Eigen::aligned_allocator<SecondOrderType> > second_order_integral_image_;
+      std::vector<ElementType, tk::tk_allocator<ElementType> > first_order_integral_image_;
+      std::vector<SecondOrderType, tk::tk_allocator<SecondOrderType> > second_order_integral_image_;
       std::vector<unsigned> finite_values_integral_image_;
 
       /** \brief The width of the 2d input data array */
@@ -332,8 +333,8 @@ namespace pcl
       void
       computeIntegralImages (const DataType * data, unsigned row_stride, unsigned element_stride);
 
-      std::vector<ElementType, Eigen::aligned_allocator<ElementType> > first_order_integral_image_;
-      std::vector<SecondOrderType, Eigen::aligned_allocator<SecondOrderType> > second_order_integral_image_;
+      std::vector<ElementType, tk::tk_allocator<ElementType> > first_order_integral_image_;
+      std::vector<SecondOrderType, tk::tk_allocator<SecondOrderType> > second_order_integral_image_;
       std::vector<unsigned> finite_values_integral_image_;
 
       /** \brief The width of the 2d input data array */

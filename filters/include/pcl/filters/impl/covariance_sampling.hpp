@@ -146,7 +146,7 @@ pcl::CovarianceSampling<PointT, PointNT>::applyFilter (Indices &sampled_indices)
 
   // Compute the v 6-vectors
   using Vector6d = Eigen::Matrix<double, 6, 1>;
-  std::vector<Vector6d, Eigen::aligned_allocator<Vector6d> > v;
+  std::vector<Vector6d, tk::tk_allocator<Vector6d> > v;
   v.resize (candidate_indices.size ());
   for (std::size_t p_i = 0; p_i < candidate_indices.size (); ++p_i)
   {

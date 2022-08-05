@@ -1,5 +1,6 @@
 #include "registration.h"
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <string>
 #include <pcl/console/parse.h>

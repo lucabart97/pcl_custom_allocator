@@ -39,6 +39,7 @@
 
 #include <pcl/pcl_macros.h>
 #include <vtkContextItem.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 template <typename T> class vtkSmartPointer;

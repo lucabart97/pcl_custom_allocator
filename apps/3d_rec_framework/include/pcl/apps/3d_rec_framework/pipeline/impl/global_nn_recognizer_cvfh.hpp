@@ -25,7 +25,7 @@ pcl::rec_3d_framework::GlobalNNCVFHRecognizer<Distance, PointInT, FeatureT>::get
     std::map<mv_pair,
              Eigen::Matrix4f,
              std::less<>,
-             Eigen::aligned_allocator<std::pair<const mv_pair, Eigen::Matrix4f>>>::
+             tk::tk_allocator<std::pair<const mv_pair, Eigen::Matrix4f>>>::
         iterator it = poses_cache_.find(pair_model_view);
 
     if (it != poses_cache_.end()) {
@@ -217,15 +217,15 @@ pcl::rec_3d_framework::GlobalNNCVFHRecognizer<Distance, PointInT, FeatureT>::rec
 
   models_.reset(new std::vector<ModelT>);
   transforms_.reset(
-      new std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>);
+      new std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>);
 
   PointInTPtr processed(new pcl::PointCloud<PointInT>);
   PointInTPtr in(new pcl::PointCloud<PointInT>);
 
   std::vector<pcl::PointCloud<FeatureT>,
-              Eigen::aligned_allocator<pcl::PointCloud<FeatureT>>>
+              tk::tk_allocator<pcl::PointCloud<FeatureT>>>
       signatures;
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>> centroids;
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>> centroids;
 
   if (!indices_.empty())
     pcl::copyPointCloud(*input_, indices_, *in);
@@ -338,7 +338,7 @@ pcl::rec_3d_framework::GlobalNNCVFHRecognizer<Distance, PointInT, FeatureT>::rec
       std::cout << "Number of object hypotheses... " << num_n << std::endl;
 
       std::vector<bool> valid_trans;
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>
           transformations;
 
       micvfh_estimator_->getValidTransformsVec(valid_trans);
@@ -537,12 +537,12 @@ pcl::rec_3d_framework::GlobalNNCVFHRecognizer<Distance, PointInT, FeatureT>::rec
 
       std::shared_ptr<std::vector<ModelT>> models_temp;
       std::shared_ptr<
-          std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>>
+          std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>>
           transforms_temp;
 
       models_temp.reset(new std::vector<ModelT>);
       transforms_temp.reset(
-          new std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>);
+          new std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>);
 
       for (std::size_t i = 0; i < models_->size(); i++) {
         if (!mask_hv[i])
@@ -595,14 +595,14 @@ pcl::rec_3d_framework::GlobalNNCVFHRecognizer<Distance, PointInT, FeatureT>::ini
 
         // pro view, compute signatures
         std::vector<pcl::PointCloud<FeatureT>,
-                    Eigen::aligned_allocator<pcl::PointCloud<FeatureT>>>
+                    tk::tk_allocator<pcl::PointCloud<FeatureT>>>
             signatures;
-        std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>>
+        std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>>
             centroids;
         micvfh_estimator_->estimate(view, processed, signatures, centroids);
 
         std::vector<bool> valid_trans;
-        std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>
+        std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>
             transforms;
 
         micvfh_estimator_->getValidTransformsVec(valid_trans);

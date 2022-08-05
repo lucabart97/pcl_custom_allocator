@@ -186,7 +186,7 @@ namespace pcl
         using PointCloudPtr = typename PointCloud::Ptr;
         using PointCloudConstPtr = typename PointCloud::ConstPtr;
 
-        using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
+        using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT> >;
 
         // Constructors
         // -----------------------------------------------------------------------
@@ -509,7 +509,7 @@ namespace pcl
             \param[in] query_depth the depth of the tree at which to retrieve occupied/existing voxels
         */
         void
-        getOccupiedVoxelCenters(std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &voxel_centers, std::size_t query_depth) const;
+        getOccupiedVoxelCenters(std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &voxel_centers, std::size_t query_depth) const;
 
         /** \brief Gets the voxel centers of all occupied/existing leaves of the tree */
         void
@@ -522,7 +522,7 @@ namespace pcl
          *  \param[out] voxel_centers std::vector of the centers of all occupied leaves of the octree
          */
         void
-        getOccupiedVoxelCenters(std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &voxel_centers) const
+        getOccupiedVoxelCenters(std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &voxel_centers) const
         {
           getOccupiedVoxelCenters(voxel_centers, metadata_->getDepth ());
         }

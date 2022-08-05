@@ -316,7 +316,7 @@ public:
 
     // Use one of the overloaded segmentAndRefine calls to get all the information that
     // we want out
-    std::vector<PlanarRegion<PointT>, Eigen::aligned_allocator<PlanarRegion<PointT>>>
+    std::vector<PlanarRegion<PointT>, tk::tk_allocator<PlanarRegion<PointT>>>
         regions;
     std::vector<ModelCoefficients> model_coefficients;
     std::vector<PointIndices> inlier_indices;

@@ -49,6 +49,7 @@
 #include <map>
 #include <memory>
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace openni_wrapper

@@ -397,7 +397,7 @@ namespace pcl
     ////////////////////////////////////////////////////////////////////////////////
 
     template<typename ContainerT, typename PointT> void
-    OutofcoreOctreeBase<ContainerT, PointT>::getOccupiedVoxelCenters(std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &voxel_centers, const std::size_t query_depth) const
+    OutofcoreOctreeBase<ContainerT, PointT>::getOccupiedVoxelCenters(std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &voxel_centers, const std::size_t query_depth) const
     {
       std::shared_lock < std::shared_timed_mutex > lock (read_write_mutex_);
       if (query_depth > metadata_->getDepth ())

@@ -45,6 +45,7 @@
 
 #include <pcl/pcl_config.h>
 #include <pcl/pcl_macros.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <cstdint>
@@ -136,6 +137,6 @@ namespace pcl
    * \brief Type used for aligned vector of Eigen objects in PCL
    */
   template <typename T>
-  using AlignedVector = std::vector<T, Eigen::aligned_allocator<T>>;
+  using AlignedVector = std::vector<T, tk::tk_allocator<T>>;
 }  // namespace pcl
 

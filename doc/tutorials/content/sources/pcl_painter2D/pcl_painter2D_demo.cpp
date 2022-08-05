@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <map>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <pcl/visualization/pcl_painter2D.h>
 //----------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <iosfwd>
 #include <pcl/memory.h>

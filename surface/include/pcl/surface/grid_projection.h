@@ -96,7 +96,7 @@ namespace pcl
         Eigen::Vector3f vect_at_grid_pt;
       };
 
-      typedef std::unordered_map<int, Leaf, std::hash<int>, std::equal_to<>, Eigen::aligned_allocator<std::pair<const int, Leaf>>> HashMap;
+      typedef std::unordered_map<int, Leaf, std::hash<int>, std::equal_to<>, tk::tk_allocator<std::pair<const int, Leaf>>> HashMap;
 
       /** \brief Constructor. */ 
       GridProjection ();
@@ -181,13 +181,13 @@ namespace pcl
         return (cell_hash_map_);
       }
 
-      inline const std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> >& 
+      inline const std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> >& 
       getVectorAtDataPoint () const
       {
         return (vector_at_data_point_);
       }
       
-      inline const std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> >& 
+      inline const std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> >& 
       getSurface () const
       {
         return (surface_);
@@ -273,7 +273,7 @@ namespace pcl
         */
       void 
       getVertexFromCellCenter (const Eigen::Vector4f &cell_center, 
-                               std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > &pts) const;
+                               std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > &pts) const;
 
       /** \brief Given an index (x, y, z) in 3d, translate it into the index 
         * in 1d
@@ -406,8 +406,8 @@ namespace pcl
         * \param pt_union_indices the union of input data points within the cell and padding cells
         */
       bool 
-      isIntersected (const std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > &end_pts, 
-                     std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > &vect_at_end_pts, 
+      isIntersected (const std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > &end_pts, 
+                     std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > &vect_at_end_pts, 
                      pcl::Indices &pt_union_indices);
 
       /** \brief Find point where the edge intersects the surface.
@@ -420,8 +420,8 @@ namespace pcl
         */
       void
       findIntersection (int level, 
-                        const std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > &end_pts, 
-                        const std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > &vect_at_end_pts, 
+                        const std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > &end_pts, 
+                        const std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > &vect_at_end_pts, 
                         const Eigen::Vector4f &start_pt, 
                         pcl::Indices &pt_union_indices,
                         Eigen::Vector4f &intersection);
@@ -489,10 +489,10 @@ namespace pcl
       PointCloudPtr data_;
 
       /** \brief Store the surface normal(vector) at the each input data point. */
-      std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > vector_at_data_point_;
+      std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > vector_at_data_point_;
       
       /** \brief An array of points which lay on the output surface. */
-      std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > surface_;
+      std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > surface_;
 
       /** \brief Bit map which tells if there is any input data point in the cell. */
       boost::dynamic_bitset<> occupied_cell_list_;

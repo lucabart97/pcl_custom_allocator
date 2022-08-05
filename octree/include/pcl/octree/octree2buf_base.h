@@ -44,6 +44,7 @@
 #include <pcl/octree/octree_nodes.h>
 #include <pcl/pcl_macros.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

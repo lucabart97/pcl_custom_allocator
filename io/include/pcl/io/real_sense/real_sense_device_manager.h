@@ -49,6 +49,7 @@
 #include <cstddef>  // for std::size_t
 #include <mutex>  // for std::lock_guard, std::mutex
 #include <string>  // for std::string
+#include <pcl/tk_allocator.h>
 #include <vector>  // for std::vector
 
 namespace pcl

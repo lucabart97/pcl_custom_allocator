@@ -37,6 +37,7 @@
 #ifndef _PCL_GPU_OCTREE_
 #define _PCL_GPU_OCTREE_
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/memory.h>

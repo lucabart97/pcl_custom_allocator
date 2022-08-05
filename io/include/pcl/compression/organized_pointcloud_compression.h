@@ -43,6 +43,7 @@
 
 #include <pcl/io/openni_camera/openni_shift_to_depth_conversion.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

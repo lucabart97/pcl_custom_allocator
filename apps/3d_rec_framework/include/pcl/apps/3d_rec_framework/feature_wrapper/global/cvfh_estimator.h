@@ -53,7 +53,7 @@ public:
   estimate(PointInTPtr& in,
            PointInTPtr& processed,
            typename pcl::PointCloud<FeatureT>::CloudVectorType& signatures,
-           std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>>&
+           std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>>&
                centroids) override
   {
 

@@ -791,7 +791,7 @@ pcl::MLSResult::computeMLSSurface (const pcl::PointCloud<PointT> &cloud,
 
       // Update neighborhood, since point was projected, and computing relative
       // positions. Note updating only distances for the weights for speed
-      std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > de_meaned (num_neighbors);
+      std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > de_meaned (num_neighbors);
       for (std::size_t ni = 0; ni < static_cast<std::size_t>(num_neighbors); ++ni)
       {
         de_meaned[ni][0] = cloud[nn_indices[ni]].x - mean[0];

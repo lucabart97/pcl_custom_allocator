@@ -96,7 +96,7 @@ pcl::cloud_composer::OrganizedSegmentationTool::performTemplatedAction (const QL
     mps.setDistanceThreshold (distance_threshold);
     mps.setInputNormals (input_normals);
     mps.setInputCloud (input_cloud);
-    std::vector<pcl::PlanarRegion<PointT>, Eigen::aligned_allocator<pcl::PlanarRegion<PointT> > > regions;
+    std::vector<pcl::PlanarRegion<PointT>, tk::tk_allocator<pcl::PlanarRegion<PointT> > > regions;
     std::vector<pcl::ModelCoefficients> model_coefficients;
     std::vector<pcl::PointIndices> inlier_indices;
     pcl::PointCloud<pcl::Label>::Ptr labels (new pcl::PointCloud<pcl::Label>);

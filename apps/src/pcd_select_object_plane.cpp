@@ -266,7 +266,7 @@ public:
     // Segment out all planes
     std::vector<ModelCoefficients> model_coefficients;
     std::vector<PointIndices> inlier_indices, boundary_indices;
-    std::vector<PlanarRegion<PointT>, Eigen::aligned_allocator<PlanarRegion<PointT>>>
+    std::vector<PlanarRegion<PointT>, tk::tk_allocator<PlanarRegion<PointT>>>
         regions;
 
     // Prefer a faster method if the cloud is organized, over RANSAC

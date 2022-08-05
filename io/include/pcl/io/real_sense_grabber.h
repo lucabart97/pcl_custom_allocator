@@ -48,6 +48,7 @@
 #include <mutex>
 #include <string>
 #include <thread>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

@@ -88,7 +88,7 @@ The code below implements a full Clustering Pipeline: the input of the pipeline 
 
 ::
 
-    std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > rototranslations;
+    std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > rototranslations;
 
 ``rototraslations`` represents a list of `coarsely` transformed models ("object hypotheses") in the scene.
 

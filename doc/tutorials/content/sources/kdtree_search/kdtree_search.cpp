@@ -2,6 +2,7 @@
 #include <pcl/kdtree/kdtree_flann.h>
 
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <ctime>
 

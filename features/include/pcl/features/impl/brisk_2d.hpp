@@ -470,7 +470,7 @@ BRISK2DEstimation<PointInT, PointOutT, KeypointT, IntensityT>::compute (
   // initialize constants
   static const float lb_scalerange = std::log2 (scalerange_);
 
-  typename std::vector<KeypointT, Eigen::aligned_allocator<KeypointT> >::iterator beginning = keypoints_->points.begin ();
+  typename std::vector<KeypointT, tk::tk_allocator<KeypointT> >::iterator beginning = keypoints_->points.begin ();
   std::vector<int>::iterator beginningkscales = kscales.begin ();
 
   static const float basic_size_06 = basic_size_ * 0.6f;

@@ -402,7 +402,7 @@ capture (Eigen::Isometry3d pose_in,unsigned short* depth_buffer_mm,const std::ui
   }
   */
 
-  std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d> > poses;
+  std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d> > poses;
   std::vector<float> scores;
   poses.push_back (pose_in);
   // HACK: mfallon modified computeLikelihoods to only call render()  (which is currently private)
@@ -480,7 +480,7 @@ load_PolygonMesh_model (std::string polygon_file)
 // @param: n_poses: number of generated poses
 void
 generate_halo(
-  std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d> > &poses,
+  std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d> > &poses,
   Eigen::Vector3d focus_center,double halo_r,double halo_dz,int n_poses)
 {
   for (double t=0;t < (2*M_PI);t =t + (2*M_PI)/ ((double) n_poses) ){
@@ -1029,7 +1029,7 @@ struct KinFuApp
     load_PolygonMesh_model (plyfile);  
     
     // Generate a series of poses:
-    std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d> > poses;
+    std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d> > poses;
     Eigen::Vector3d focus_center(0,0,1.3);
     //  double halo_r = 4.0;
     double halo_r = 1.5;  

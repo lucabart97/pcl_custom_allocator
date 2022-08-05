@@ -44,6 +44,7 @@
 #include <pcl/ml/feature_handler.h>
 #include <pcl/ml/stats_estimator.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

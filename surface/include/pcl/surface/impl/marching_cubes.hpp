@@ -101,7 +101,7 @@ pcl::MarchingCubes<PointNT>::createSurface (const std::vector<float> &leaf_node,
   const Eigen::Vector3f center = lower_boundary_ 
     + size_voxel_ * index_3d.cast<float> ().array ();
 
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > p;
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > p;
   p.resize (8);
   for (int i = 0; i < 8; ++i)
   {
@@ -119,7 +119,7 @@ pcl::MarchingCubes<PointNT>::createSurface (const std::vector<float> &leaf_node,
   }
 
   // Find the vertices where the surface intersects the cube
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > vertex_list;
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > vertex_list;
   vertex_list.resize (12);
   if (edgeTable[cubeindex] & 1)
     interpolateEdge (p[0], p[1], leaf_node[0], leaf_node[1], vertex_list[0]);

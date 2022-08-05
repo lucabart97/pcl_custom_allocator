@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>   // for string
+#include <pcl/tk_allocator.h>
 #include <vector>   // for vector
 #include <ostream>  // for ostream
 

@@ -47,6 +47,7 @@
 #include "pcl/gpu/people/person_attribs.h"
 
 // std
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -119,7 +120,7 @@ namespace pcl
        * @return Zero if everything went well
        **/
       inline int
-      leafBlobVector(   std::vector<std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >& sorted,
+      leafBlobVector(   std::vector<std::vector<Blob2, tk::tk_allocator<Blob2> > >& sorted,
                             int                               label )
       {
         if(sorted[label].empty ())
@@ -140,7 +141,7 @@ namespace pcl
        * @return Zero if everything went well
        **/
       inline int
-      noChildBlobVector(  std::vector<std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >& sorted,
+      noChildBlobVector(  std::vector<std::vector<Blob2, tk::tk_allocator<Blob2> > >& sorted,
                               int                               label,
                               int                               child_number)
       {
@@ -157,7 +158,7 @@ namespace pcl
        * @return True if this label has valid children
        **/
       inline bool
-      hasThisLabelChildren ( std::vector<std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >& sorted,
+      hasThisLabelChildren ( std::vector<std::vector<Blob2, tk::tk_allocator<Blob2> > >& sorted,
                                   part_t                            label,
                                   int                               child_number)
       {
@@ -223,7 +224,7 @@ namespace pcl
        * @todo once we have good evaluation function reconsider best_value
        **/
       inline int
-      evaluateBlobVector( std::vector<std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >& sorted,
+      evaluateBlobVector( std::vector<std::vector<Blob2, tk::tk_allocator<Blob2> > >& sorted,
                               unsigned int                      parent_label,
                               int                               child_label,
                               int                               child_number)
@@ -282,7 +283,7 @@ namespace pcl
        * @todo once we have good evaluation function reconsider best_value
        **/
       inline int
-      evaluateBlobVector( std::vector<std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >& sorted,
+      evaluateBlobVector( std::vector<std::vector<Blob2, tk::tk_allocator<Blob2> > >& sorted,
                               unsigned int                      parent_label,
                               int                               child_label,
                               int                               child_number,
@@ -339,7 +340,7 @@ namespace pcl
        * @todo look if we can't get a more efficient implementation (iterator together with sortBlobs perhaps?)
        */
       inline int
-      buildRelations( std::vector<std::vector<Blob2, Eigen::aligned_allocator<pcl::gpu::people::Blob2> > >& sorted)
+      buildRelations( std::vector<std::vector<Blob2, tk::tk_allocator<pcl::gpu::people::Blob2> > >& sorted)
       {
         PCL_VERBOSE("[pcl::gpu::people::buildRelations] : (I) : buildRelations : regular version\n");
         if(sorted.empty ()){
@@ -442,7 +443,7 @@ namespace pcl
        * @todo look if we can't get a more efficient implementation (iterator together with sortBlobs perhaps?)
        */
       inline int
-      buildRelations( std::vector<std::vector<Blob2, Eigen::aligned_allocator<pcl::gpu::people::Blob2> > >& sorted,
+      buildRelations( std::vector<std::vector<Blob2, tk::tk_allocator<pcl::gpu::people::Blob2> > >& sorted,
                       PersonAttribs::Ptr person_attribs)
       {
         PCL_DEBUG("[pcl::gpu::people::buildRelations] : (D) : person specific version\n");
@@ -539,7 +540,7 @@ namespace pcl
 
 
 
-      inline int browseTree (const std::vector<std::vector <Blob2, Eigen::aligned_allocator<Blob2> > >&  sorted,
+      inline int browseTree (const std::vector<std::vector <Blob2, tk::tk_allocator<Blob2> > >&  sorted,
                              Tree2& tree,
                              int part_label,
                              int part_lid)
@@ -570,7 +571,7 @@ namespace pcl
         return 0;
       }
 
-      inline int browseTree (const std::vector<std::vector <Blob2, Eigen::aligned_allocator<Blob2> > >&  sorted,
+      inline int browseTree (const std::vector<std::vector <Blob2, tk::tk_allocator<Blob2> > >&  sorted,
                              Tree2&             tree,
                              int                part_label,
                              int                part_lid,
@@ -602,7 +603,7 @@ namespace pcl
         return 0;
       }
 
-      inline int buildTree ( const std::vector<std::vector <Blob2, Eigen::aligned_allocator<Blob2> > >&  sorted,
+      inline int buildTree ( const std::vector<std::vector <Blob2, tk::tk_allocator<Blob2> > >&  sorted,
                              const pcl::PointCloud<pcl::PointXYZ>&  cloud_in,
                              part_t                                 part_label,
                              int                                    part_lid,
@@ -631,7 +632,7 @@ namespace pcl
         return 0;
       }
 
-      inline int buildTree ( const std::vector<std::vector <Blob2, Eigen::aligned_allocator<Blob2> > >&  sorted,
+      inline int buildTree ( const std::vector<std::vector <Blob2, tk::tk_allocator<Blob2> > >&  sorted,
                              const pcl::PointCloud<pcl::PointXYZ>&  cloud_in,
                              part_t                                 part_label,
                              int                                    part_lid,

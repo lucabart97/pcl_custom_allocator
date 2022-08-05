@@ -54,7 +54,7 @@ namespace pcl
     * \ingroup features
     */
   template <int N> void
-  getFeaturePointCloud (const std::vector<Eigen::MatrixXf, Eigen::aligned_allocator<Eigen::MatrixXf> > &histograms2D, PointCloud<Histogram<N> > &histogramsPC)
+  getFeaturePointCloud (const std::vector<Eigen::MatrixXf, tk::tk_allocator<Eigen::MatrixXf> > &histograms2D, PointCloud<Histogram<N> > &histogramsPC)
   {
     histogramsPC.resize (histograms2D.size ());
     histogramsPC.width    = histograms2D.size ();
@@ -201,7 +201,7 @@ namespace pcl
       /** \brief Returns a pointer to the list of full distance-angle histograms for all points.
         * \return the histogram being saved when computing RSD
 	*/
-      inline shared_ptr<std::vector<Eigen::MatrixXf, Eigen::aligned_allocator<Eigen::MatrixXf> > >
+      inline shared_ptr<std::vector<Eigen::MatrixXf, tk::tk_allocator<Eigen::MatrixXf> > >
       getHistograms () const { return (histograms_); }
 
     protected:
@@ -215,7 +215,7 @@ namespace pcl
       computeFeature (PointCloudOut &output) override;
 
       /** \brief The list of full distance-angle histograms for all points. */
-      shared_ptr<std::vector<Eigen::MatrixXf, Eigen::aligned_allocator<Eigen::MatrixXf> > > histograms_;
+      shared_ptr<std::vector<Eigen::MatrixXf, tk::tk_allocator<Eigen::MatrixXf> > > histograms_;
 
     private:
       /** \brief The number of subdivisions for the considered distance interval. */

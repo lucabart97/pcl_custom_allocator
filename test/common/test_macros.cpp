@@ -38,6 +38,7 @@
 #include <pcl/pcl_config.h>
 #include <pcl/pcl_tests.h>
 #include <pcl/common/eigen.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 using namespace pcl::test;

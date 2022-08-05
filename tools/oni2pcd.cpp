@@ -39,6 +39,7 @@
 #include <pcl/point_types.h>
 #include <pcl/io/oni_grabber.h>
 #include <pcl/io/pcd_io.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 using namespace pcl;

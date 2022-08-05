@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <boost/predef/other/endian.h>

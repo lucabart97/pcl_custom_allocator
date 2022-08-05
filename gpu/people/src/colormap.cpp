@@ -35,6 +35,7 @@
  */
 
 #include <pcl/gpu/people/colormap.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include "internal.h"
 

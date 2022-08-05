@@ -679,7 +679,7 @@ pcl::OBJReader::read (const std::string &file_name, pcl::TextureMesh &mesh,
   std::size_t f_idx = 0;
   std::string line;
   std::vector<std::string> st;
-  std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> > coordinates;
+  std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> > coordinates;
   try
   {
     std::size_t vn_idx = 0;

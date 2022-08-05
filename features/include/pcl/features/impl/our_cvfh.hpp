@@ -196,7 +196,7 @@ pcl::OURCVFHEstimation<PointInT, PointNT, PointOutT>::filterNormalsWithHighCurva
 
 template<typename PointInT, typename PointNT, typename PointOutT> bool
 pcl::OURCVFHEstimation<PointInT, PointNT, PointOutT>::sgurf (Eigen::Vector3f & centroid, Eigen::Vector3f & normal_centroid,
-                                                               PointInTPtr & processed, std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > & transformations,
+                                                               PointInTPtr & processed, std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > & transformations,
                                                                PointInTPtr & grid, pcl::PointIndices & indices)
 {
 
@@ -389,7 +389,7 @@ pcl::OURCVFHEstimation<PointInT, PointNT, PointOutT>::computeRFAndShapeDistribut
   for (std::size_t i = 0; i < centroids_dominant_orientations_.size (); i++)
   {
 
-    std::vector < Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > transformations;
+    std::vector < Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > transformations;
     PointInTPtr grid (new pcl::PointCloud<PointInT>);
     sgurf (centroids_dominant_orientations_[i], dominant_normals_[i], processed, transformations, grid, cluster_indices[i]);
 

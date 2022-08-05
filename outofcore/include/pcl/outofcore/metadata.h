@@ -39,6 +39,7 @@
 #pragma once
 
 #include <pcl/outofcore/boost.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <ostream>
 

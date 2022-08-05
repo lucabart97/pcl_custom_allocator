@@ -29,7 +29,7 @@ namespace apps {
  */
 class PCL_EXPORTS RenderViewsTesselatedSphere {
 private:
-  std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>> poses_;
+  std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>> poses_;
   std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> generated_views_;
   std::vector<float> entropies_;
   int resolution_;
@@ -164,7 +164,7 @@ public:
    */
   void
   getPoses(
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>& poses)
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>& poses)
   {
     poses = poses_;
   }

@@ -306,7 +306,7 @@ display()
     }
   }
 
-  std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> poses;
+  std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>> poses;
   std::vector<float> scores;
   int n = range_likelihood_->getRows() * range_likelihood_->getCols();
   for (int i = 0; i < n; ++i) {

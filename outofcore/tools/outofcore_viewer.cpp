@@ -92,7 +92,7 @@ using octree_disk_node = OutofcoreOctreeBaseNode<OutofcoreOctreeDiskContainer<Po
 //using octree_disk = octree_base<OutofcoreOctreeDiskContainer<PointT> , PointT>;
 using OctreeDiskPtr = octree_disk::Ptr;
 //using octree_disk_node = octree_base_node<octree_disk_container<PointT> , PointT>;
-using AlignedPointT = Eigen::aligned_allocator<PointT>;
+using AlignedPointT = tk::tk_allocator<PointT>;
 
 // VTK
 #include <vtkActor.h>

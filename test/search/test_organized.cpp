@@ -37,6 +37,7 @@
 
 #include <pcl/test/gtest.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 
@@ -133,7 +134,7 @@ TEST (PCL, Organized_Neighbor_Pointcloud_Nearest_K_Neighbour_Search)
     k_indices_bruteforce.clear();
     k_sqr_distances_bruteforce.clear();
 
-    std::priority_queue<prioPointQueueEntry, std::vector<prioPointQueueEntry, Eigen::aligned_allocator<prioPointQueueEntry> > > pointCandidates;
+    std::priority_queue<prioPointQueueEntry, std::vector<prioPointQueueEntry, tk::tk_allocator<prioPointQueueEntry> > > pointCandidates;
 
 
     // push all points and their distance to the search point into a priority queue - bruteforce approach.

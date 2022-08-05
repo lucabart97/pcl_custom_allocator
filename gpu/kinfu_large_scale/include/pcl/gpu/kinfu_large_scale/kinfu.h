@@ -44,6 +44,7 @@
 #include <pcl/io/ply_io.h>
 
 #include <Eigen/Core>
+#include <pcl/tk_allocator.h>
 #include <vector>
 //#include <boost/graph/buffer_concepts.hpp>
 

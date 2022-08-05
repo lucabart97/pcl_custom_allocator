@@ -259,8 +259,8 @@ public:
     model.values.resize(4);
 
     std::vector<pcl::ModelCoefficients> model_coefficients;
-    std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f>> centroids;
-    std::vector<Eigen::Matrix3f, Eigen::aligned_allocator<Eigen::Matrix3f>> covariances;
+    std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f>> centroids;
+    std::vector<Eigen::Matrix3f, tk::tk_allocator<Eigen::Matrix3f>> covariances;
     std::vector<pcl::PointIndices> inlier_indices;
 
     for (const auto& region_index : region_indices) {

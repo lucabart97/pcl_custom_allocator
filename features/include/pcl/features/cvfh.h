@@ -144,7 +144,7 @@ namespace pcl
         * \param[out] centroids vector to hold the centroids
         */
       inline void
-      getCentroidClusters (std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > & centroids)
+      getCentroidClusters (std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > & centroids)
       {
         centroids.insert (centroids.cend (), centroids_dominant_orientations_.cbegin (),
                           centroids_dominant_orientations_.cend ());
@@ -154,7 +154,7 @@ namespace pcl
         * \param[out] centroids vector to hold the normal centroids
         */
       inline void
-      getCentroidNormalClusters (std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > & centroids)
+      getCentroidNormalClusters (std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > & centroids)
       {
         for (const auto& normal: dominant_normals_)
           centroids.push_back (normal);
@@ -276,9 +276,9 @@ namespace pcl
 
     protected:
       /** \brief Centroids that were used to compute different CVFH descriptors */
-      std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > centroids_dominant_orientations_;
+      std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > centroids_dominant_orientations_;
       /** \brief Normal centroids that were used to compute different CVFH descriptors */
-      std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > dominant_normals_;
+      std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > dominant_normals_;
   };
 }
 

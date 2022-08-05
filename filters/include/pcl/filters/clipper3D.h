@@ -40,6 +40,7 @@
 #include <pcl/memory.h>
 #include <pcl/pcl_macros.h>
 #include <pcl/point_cloud.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <Eigen/StdVector>
 
@@ -85,7 +86,7 @@ namespace pcl
         * \param[in,out] polygon the polygon in any direction (ccw or cw) but ordered, thus two neighboring points define an edge of the polygon
         */
       virtual void
-      clipPlanarPolygon3D (std::vector<PointT, Eigen::aligned_allocator<PointT> >& polygon) const = 0;
+      clipPlanarPolygon3D (std::vector<PointT, tk::tk_allocator<PointT> >& polygon) const = 0;
 
       /**
         * \brief interface to clip a planar polygon given by an ordered list of points
@@ -93,7 +94,7 @@ namespace pcl
         * \param[out] clipped_polygon the clipped polygon
         */
       virtual void
-      clipPlanarPolygon3D (const std::vector<PointT, Eigen::aligned_allocator<PointT> >& polygon, std::vector<PointT, Eigen::aligned_allocator<PointT> >& clipped_polygon) const = 0;
+      clipPlanarPolygon3D (const std::vector<PointT, tk::tk_allocator<PointT> >& polygon, std::vector<PointT, tk::tk_allocator<PointT> >& clipped_polygon) const = 0;
 
       /**
         * \brief interface to clip a point cloud

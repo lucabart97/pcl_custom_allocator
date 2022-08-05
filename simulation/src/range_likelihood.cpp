@@ -553,7 +553,7 @@ pcl::simulation::RangeLikelihood::applyCameraTransform(const Eigen::Isometry3d& 
 
 void
 pcl::simulation::RangeLikelihood::drawParticles(
-    std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> poses)
+    std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>> poses)
 {
   int n = 0;
   for (int i = 0; i < rows_; ++i) {
@@ -976,7 +976,7 @@ pcl::simulation::RangeLikelihood::addNoise()
 void
 RangeLikelihood::computeLikelihoods(
     float* reference,
-    std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> poses,
+    std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>> poses,
     std::vector<float>& scores)
 {
 #if DO_TIMING_PROFILE
@@ -1136,7 +1136,7 @@ pcl::simulation::RangeLikelihood::computeScoresShader(float* reference)
 
 void
 RangeLikelihood::render(
-    const std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>>&
+    const std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>>&
         poses)
 {
   if (gllib::getGLError() != GL_NO_ERROR) {

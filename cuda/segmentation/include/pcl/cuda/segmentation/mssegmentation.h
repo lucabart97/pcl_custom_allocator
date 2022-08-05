@@ -48,6 +48,7 @@
 
 #include <pcl/pcl_exports.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <opencv2/core/core.hpp>
 #include <opencv2/gpu/gpu.hpp>

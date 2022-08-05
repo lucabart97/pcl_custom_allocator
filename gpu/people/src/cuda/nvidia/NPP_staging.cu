@@ -39,6 +39,7 @@
  */
 
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <cuda_runtime.h>
 #include "NPP_staging.hpp"

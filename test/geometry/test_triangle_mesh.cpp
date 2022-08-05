@@ -38,6 +38,7 @@
  *
  */
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/test/gtest.h>

@@ -31,7 +31,7 @@ class Model {
 public:
   std::shared_ptr<std::vector<PointTPtr>> views_;
   std::shared_ptr<
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>>
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>>
       poses_;
   std::shared_ptr<std::vector<float>> self_occlusions_;
   std::string id_;

@@ -46,6 +46,7 @@
 
 
 #include <stdarg.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 

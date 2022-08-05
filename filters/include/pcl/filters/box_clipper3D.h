@@ -99,10 +99,10 @@ namespace pcl
       clipLineSegment3D (PointT& from, PointT& to) const override;
 
       void
-      clipPlanarPolygon3D (std::vector<PointT, Eigen::aligned_allocator<PointT> >& polygon) const override;
+      clipPlanarPolygon3D (std::vector<PointT, tk::tk_allocator<PointT> >& polygon) const override;
 
       void
-      clipPlanarPolygon3D (const std::vector<PointT, Eigen::aligned_allocator<PointT> >& polygon, std::vector<PointT, Eigen::aligned_allocator<PointT> >& clipped_polygon) const override;
+      clipPlanarPolygon3D (const std::vector<PointT, tk::tk_allocator<PointT> >& polygon, std::vector<PointT, tk::tk_allocator<PointT> >& clipped_polygon) const override;
 
       void
       clipPointCloud3D (const pcl::PointCloud<PointT> &cloud_in, Indices& clipped, const Indices& indices = Indices ()) const override;

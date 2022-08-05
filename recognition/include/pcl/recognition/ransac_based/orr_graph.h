@@ -49,6 +49,7 @@
 #include <cstddef>
 #include <list>
 #include <set>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

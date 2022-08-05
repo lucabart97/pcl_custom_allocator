@@ -130,7 +130,7 @@ main (int argc, char **argv)
   vis.setRepresentationToSurfaceForAllActors ();
 
   PointCloud<PointXYZ>::CloudVectorType views_xyz;
-  std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > poses;
+  std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > poses;
   std::vector<float> enthropies;
   vis.renderViewTesselatedSphere (resolution, resolution, views_xyz, poses, enthropies, tesselated_sphere_level);
 

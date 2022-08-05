@@ -1861,7 +1861,7 @@ abstraction for non-PCL types.
 
 ## *= 1.8.0 (14.06.2016) =*
 
-* Added missing `Eigen::aligned_allocator` in vectors and maps that contain
+* Added missing `tk::tk_allocator` in vectors and maps that contain
   vectorizable Eigen where appropriate
   [[#1034]](https://github.com/PointCloudLibrary/pcl/pull/1034)
   [[#1052]](https://github.com/PointCloudLibrary/pcl/pull/1052)

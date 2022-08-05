@@ -162,7 +162,7 @@ void showCloudsRight(const PointCloudWithNormals::Ptr cloud_target, const PointC
   * \param argv the actual command line arguments (pass from main ())
   * \param models the resultant vector of point cloud datasets
   */
-void loadData (int argc, char **argv, std::vector<PCD, Eigen::aligned_allocator<PCD> > &models)
+void loadData (int argc, char **argv, std::vector<PCD, tk::tk_allocator<PCD> > &models)
 {
   std::string extension (".pcd");
   // Suppose the first argument is the actual test model
@@ -326,7 +326,7 @@ void pairAlign (const PointCloud::Ptr cloud_src, const PointCloud::Ptr cloud_tgt
 int main (int argc, char** argv)
 {
   // Load data
-  std::vector<PCD, Eigen::aligned_allocator<PCD> > data;
+  std::vector<PCD, tk::tk_allocator<PCD> > data;
   loadData (argc, argv, data);
 
   // Check user input

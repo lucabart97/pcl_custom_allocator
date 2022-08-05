@@ -46,6 +46,7 @@
 #include <vtkIdTypeArray.h>
 
 #include <unordered_map>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 template <typename T> class vtkSmartPointer;

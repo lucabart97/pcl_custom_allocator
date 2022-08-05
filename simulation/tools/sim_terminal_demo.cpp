@@ -93,7 +93,7 @@ write_sim_output(const std::string& fname_root)
 // @param: n_poses: number of generated poses
 void
 generate_halo(
-    std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>>& poses,
+    std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>>& poses,
     Eigen::Vector3d focus_center,
     double halo_r,
     double halo_dz,
@@ -145,7 +145,7 @@ main(int argc, char** argv)
   // -0 100 fixed poses
   // -1 a 'halo' camera
   // -2 slerp between two different poses
-  std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> poses;
+  std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>> poses;
   if (mode == 0) {
     // Create a pose:
     Eigen::Isometry3d pose;

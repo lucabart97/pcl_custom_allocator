@@ -46,6 +46,7 @@
 #include <pcl/compression/libpng_wrapper.h>
 #include <pcl/compression/organized_pointcloud_conversion.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <cassert>
 

@@ -421,7 +421,7 @@ namespace pcl
         * \return true if the recognition had been successful or false if errors have occurred.
         */
       bool
-      recognize (std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > &transformations);
+      recognize (std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > &transformations);
 
       /** \brief The main function, recognizes instances of the model into the scene set by the user.
         *
@@ -431,7 +431,7 @@ namespace pcl
         * \return true if the recognition had been successful or false if errors have occurred.
         */
       bool
-      recognize (std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > &transformations, std::vector<pcl::Correspondences> &clustered_corrs);
+      recognize (std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > &transformations, std::vector<pcl::Correspondences> &clustered_corrs);
 
     protected:
       using CorrespondenceGrouping<PointModelT, PointSceneT>::input_;
@@ -448,7 +448,7 @@ namespace pcl
       bool needs_training_;
 
       /** \brief The result of the training. The vector between each model point and the centroid of the model adjusted by its local reference frame.*/
-      std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> > model_votes_;
+      std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> > model_votes_;
 
       /** \brief The minimum number of votes in the Hough space needed to infer the presence of a model instance into the scene cloud. */
       double hough_threshold_;
@@ -472,7 +472,7 @@ namespace pcl
       pcl::recognition::HoughSpace3D::Ptr hough_space_;
 
       /** \brief Transformations found by clusterCorrespondences method. */
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > found_transformations_;
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > found_transformations_;
 
       /** \brief Whether the Hough space already contains the correct votes for the current input parameters and so the cluster and recognize calls don't need to recompute each value.
         * Reset on the change of any parameter except the hough_threshold.

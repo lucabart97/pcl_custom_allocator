@@ -44,6 +44,7 @@
 // STL does not support color at all
 // OBJ does not support color in PCL (the format DOES support color)
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/console/parse.h>

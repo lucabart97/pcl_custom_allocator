@@ -108,7 +108,7 @@ namespace pcl
         */
       int
       occlusionEstimation (int& out_state,
-                           std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i> >& out_ray,
+                           std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i> >& out_ray,
                            const Eigen::Vector3i& in_target_voxel);
 
       /** \brief Computes the voxel coordinates (i, j, k) of all occluded
@@ -117,7 +117,7 @@ namespace pcl
         * \return 0 upon success and -1 if an error occurs
         */
       int
-      occlusionEstimationAll (std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i> >& occluded_voxels);
+      occlusionEstimationAll (std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i> >& occluded_voxels);
 
       /** \brief Returns the voxel grid filtered point cloud
         * \return The voxel grid filtered point cloud
@@ -201,7 +201,7 @@ namespace pcl
         * \return The estimated voxel state.
         */
       int
-      rayTraversal (std::vector<Eigen::Vector3i, Eigen::aligned_allocator<Eigen::Vector3i> >& out_ray,
+      rayTraversal (std::vector<Eigen::Vector3i, tk::tk_allocator<Eigen::Vector3i> >& out_ray,
                     const Eigen::Vector3i& target_voxel,
                     const Eigen::Vector4f& origin, 
                     const Eigen::Vector4f& direction,

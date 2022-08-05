@@ -83,7 +83,7 @@ pcl::rec_3d_framework::GlobalNNPipeline<Distance, PointInT, FeatureT>::classify(
   PointInTPtr in(new pcl::PointCloud<PointInT>);
 
   typename pcl::PointCloud<FeatureT>::CloudVectorType signatures;
-  std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>> centroids;
+  std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>> centroids;
 
   if (!indices_.empty()) {
     pcl::copyPointCloud(*input_, indices_, *in);
@@ -169,7 +169,7 @@ pcl::rec_3d_framework::GlobalNNPipeline<Distance, PointInT, FeatureT>::initializ
         PointInTPtr processed(new pcl::PointCloud<PointInT>);
         // pro view, compute signatures
         typename pcl::PointCloud<FeatureT>::CloudVectorType signatures;
-        std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>>
+        std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>>
             centroids;
         estimator_->estimate(
             models->at(i).views_->at(v), processed, signatures, centroids);

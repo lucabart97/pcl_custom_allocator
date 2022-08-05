@@ -47,6 +47,7 @@
 #include <pcl/gpu/people/label_common.h>
 
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

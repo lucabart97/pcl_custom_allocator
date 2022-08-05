@@ -33,6 +33,7 @@ DAMAGE.
 #  pragma GCC system_header
 #endif
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include "polynomial.h"
 

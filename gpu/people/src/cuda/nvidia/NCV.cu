@@ -40,6 +40,7 @@
 
 #include <iostream>
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <algorithm>
 #include "NCV.hpp"

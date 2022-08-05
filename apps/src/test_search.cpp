@@ -5,6 +5,7 @@
 #include <pcl/search/kdtree.h>
 
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 int

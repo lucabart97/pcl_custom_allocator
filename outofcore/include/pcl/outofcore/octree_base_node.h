@@ -110,7 +110,7 @@ namespace pcl
         using octree_disk = OutofcoreOctreeBase<OutofcoreOctreeDiskContainer < PointT > , PointT >;
         using octree_disk_node = OutofcoreOctreeBaseNode<OutofcoreOctreeDiskContainer < PointT > , PointT >;
 
-        using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
+        using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT> >;
 
         using node_type_t = pcl::octree::node_type_t;
 
@@ -513,7 +513,7 @@ namespace pcl
          * \param[in] query_depth
          */
         void
-        getOccupiedVoxelCentersRecursive (std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &voxel_centers, const std::size_t query_depth);
+        getOccupiedVoxelCentersRecursive (std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &voxel_centers, const std::size_t query_depth);
 
         /** \brief Sorts the indices based on x,y,z fields and pushes the index into the proper octant's vector;
          *  This could be overloaded with a parallelized implementation

@@ -45,6 +45,7 @@
 #include <cstddef>
 #include <deque>
 #include <iterator>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 // Ignore warnings in the above headers

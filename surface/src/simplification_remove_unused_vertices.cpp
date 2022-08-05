@@ -39,6 +39,7 @@
 #include <pcl/PolygonMesh.h>
 
 #include <cstring>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <iostream>
 

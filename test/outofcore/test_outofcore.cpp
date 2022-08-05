@@ -44,6 +44,7 @@
 
 #include <pcl/test/gtest.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <iostream>
 #include <random>
@@ -89,7 +90,7 @@ using octree_disk_node = OutofcoreOctreeBaseNode<OutofcoreOctreeDiskContainer < 
 using octree_ram = OutofcoreOctreeBase<OutofcoreOctreeRamContainer< PointT> , PointT>;
 using octree_ram_node = OutofcoreOctreeBaseNode<OutofcoreOctreeRamContainer<PointT> , PointT>;
 
-using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
+using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT> >;
 
 AlignedPointTVector points;
 

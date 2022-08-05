@@ -21,7 +21,7 @@
 void
 displayPlanarRegions(
     std::vector<pcl::PlanarRegion<PointT>,
-                Eigen::aligned_allocator<pcl::PlanarRegion<PointT>>>& regions,
+                tk::tk_allocator<pcl::PlanarRegion<PointT>>>& regions,
     const pcl::visualization::PCLVisualizer::Ptr& viewer)
 {
   char name[1024];
@@ -352,7 +352,7 @@ OrganizedSegmentationDemo::cloud_cb(const CloudConstPtr& cloud)
   // Segment Planes
   double mps_start = pcl::getTime();
   std::vector<pcl::PlanarRegion<PointT>,
-              Eigen::aligned_allocator<pcl::PlanarRegion<PointT>>>
+              tk::tk_allocator<pcl::PlanarRegion<PointT>>>
       regions;
   std::vector<pcl::ModelCoefficients> model_coefficients;
   std::vector<pcl::PointIndices> inlier_indices;

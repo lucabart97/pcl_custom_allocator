@@ -41,6 +41,7 @@
 #include <pcl/pcl_config.h>
 #ifdef HAVE_OPENNI2
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <limits>
 

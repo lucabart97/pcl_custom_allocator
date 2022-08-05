@@ -39,6 +39,7 @@
 #pragma once
 
 #include <mutex>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/outofcore/boost.h>
@@ -52,7 +53,7 @@ namespace pcl
     {
 
       public:
-        using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
+        using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT> >;
 
         OutofcoreAbstractNodeContainer () 
           : container_ ()

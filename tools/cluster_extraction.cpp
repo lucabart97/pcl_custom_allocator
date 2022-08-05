@@ -45,6 +45,7 @@
 #include <pcl/console/parse.h>
 #include <pcl/console/time.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 using namespace pcl;

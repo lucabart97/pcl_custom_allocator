@@ -42,6 +42,7 @@
 #include <boost/graph/adjacency_list.hpp>
 
 #include <Eigen/StdVector>
+#include <pcl/tk_allocator.h>
 
 #include <list>
 
@@ -51,7 +52,7 @@ struct eigen_vecS {};
 
 template <class ValueType>
 struct container_gen<eigen_vecS, ValueType> {
-  using type = std::vector<ValueType, Eigen::aligned_allocator<ValueType>>;
+  using type = std::vector<ValueType, tk::tk_allocator<ValueType>>;
 };
 
 template <>
@@ -71,7 +72,7 @@ struct eigen_listS {};
 
 template <class ValueType>
 struct container_gen<eigen_listS, ValueType> {
-  using type = std::list<ValueType, Eigen::aligned_allocator<ValueType>>;
+  using type = std::list<ValueType, tk::tk_allocator<ValueType>>;
 };
 
 template <>

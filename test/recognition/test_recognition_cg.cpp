@@ -117,7 +117,7 @@ TEST (PCL, Hough3DGrouping)
   rf_est.setSearchSurface (scene_);
   rf_est.compute (*scene_rf);
 
-  std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > rototranslations;
+  std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > rototranslations;
 
   //Actual CG
   Hough3DGrouping<PointType, PointType, RFType, RFType> clusterer;
@@ -143,7 +143,7 @@ TEST (PCL, Hough3DGrouping)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST (PCL, GeometricConsistencyGrouping)
 {
-  std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > rototranslations;
+  std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > rototranslations;
 
   GeometricConsistencyGrouping<PointType, PointType> clusterer;
   clusterer.setInputCloud (model_downsampled_);

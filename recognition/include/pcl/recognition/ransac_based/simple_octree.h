@@ -48,6 +48,7 @@
 #include <pcl/pcl_exports.h>
 
 #include <set>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

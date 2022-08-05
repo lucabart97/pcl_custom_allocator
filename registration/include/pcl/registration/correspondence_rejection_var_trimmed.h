@@ -44,6 +44,7 @@
 #include <pcl/memory.h>      // for static_pointer_cast
 #include <pcl/point_cloud.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

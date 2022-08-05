@@ -39,6 +39,7 @@
 #define PCL_FILTERS_IMPL_SAMPLING_SURFACE_NORMAL_H_
 
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <pcl/common/eigen.h>
 #include <pcl/common/point_tests.h> // for pcl::isFinite

@@ -127,7 +127,7 @@ public:
     mps.setDistanceThreshold(0.02);          // 2cm
 
     std::vector<pcl::PlanarRegion<PointT>,
-                Eigen::aligned_allocator<pcl::PlanarRegion<PointT>>>
+                tk::tk_allocator<pcl::PlanarRegion<PointT>>>
         regions;
     pcl::PointCloud<PointT>::Ptr contour(new pcl::PointCloud<PointT>);
     std::size_t prev_models_size = 0;

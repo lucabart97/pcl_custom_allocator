@@ -23,6 +23,7 @@
 #include <pcl/memory.h> // for pcl::dynamic_pointer_cast
 
 #include <string>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 template <typename FeatureType>

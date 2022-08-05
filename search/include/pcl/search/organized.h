@@ -46,6 +46,7 @@
 #include <pcl/common/eigen.h>
 
 #include <algorithm>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

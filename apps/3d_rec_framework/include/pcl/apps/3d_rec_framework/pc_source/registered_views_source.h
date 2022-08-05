@@ -86,7 +86,7 @@ public:
   void
   assembleModelFromViewsAndPoses(
       ModelT& model,
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>& poses)
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>& poses)
   {
     for (std::size_t i = 0; i < model.views_->size(); i++) {
       Eigen::Matrix4f inv = poses[i];
@@ -105,7 +105,7 @@ public:
 
     model.views_.reset(new std::vector<typename pcl::PointCloud<PointInT>::Ptr>);
     model.poses_.reset(
-        new std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>);
+        new std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>);
     model.self_occlusions_.reset(new std::vector<float>);
 
     if (bf::exists(trained_dir)) {
@@ -131,7 +131,7 @@ public:
         }
       }
 
-      std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>>
+      std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f>>
           poses_to_assemble_;
 
       for (std::size_t i = 0; i < view_filenames.size(); i++) {

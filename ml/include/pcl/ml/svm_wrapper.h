@@ -46,6 +46,7 @@
 #include <cstdlib>
 #include <limits> // for numeric_limits
 #include <string> // for string
+#include <pcl/tk_allocator.h>
 #include <vector>
 #define Malloc(type, n) static_cast<type*>(malloc((n) * sizeof(type)))
 

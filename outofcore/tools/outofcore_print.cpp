@@ -82,7 +82,7 @@ using OctreeDiskNode = OutofcoreOctreeBaseNode<>;
 using OctreeBreadthFirstIterator = OutofcoreBreadthFirstIterator<>;
 using OctreeDepthFirstIterator = OutofcoreDepthFirstIterator<>;
 
-using AlignedPointT = Eigen::aligned_allocator<PointT>;
+using AlignedPointT = tk::tk_allocator<PointT>;
 
 void
 printDepth(std::size_t depth)

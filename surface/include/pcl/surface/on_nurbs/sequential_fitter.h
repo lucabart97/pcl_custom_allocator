@@ -184,19 +184,19 @@ namespace pcl
 
         /** \brief Get parameter of each interior point */
         void
-        getInteriorParams (std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d> > &params) const;
+        getInteriorParams (std::vector<Eigen::Vector2d, tk::tk_allocator<Eigen::Vector2d> > &params) const;
 
         /** \brief Get parameter of each boundary point */
         void
-        getBoundaryParams (std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d> > &params) const;
+        getBoundaryParams (std::vector<Eigen::Vector2d, tk::tk_allocator<Eigen::Vector2d> > &params) const;
 
         /** \brief get the normals to the interior points given by setInterior() */
         void
-        getInteriorNormals (std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &normal) const;
+        getInteriorNormals (std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &normal) const;
 
         /** \brief get the normals to the boundary points given by setBoundary() */
         void
-        getBoundaryNormals (std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &normals) const;
+        getBoundaryNormals (std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &normals) const;
 
         /** \brief Get the closest point on a NURBS from a point pt in parameter space
          *  \param[in] nurbs  The NURBS surface

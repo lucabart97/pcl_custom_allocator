@@ -38,6 +38,7 @@
 #pragma once
 
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

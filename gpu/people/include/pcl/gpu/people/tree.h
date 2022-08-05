@@ -42,6 +42,7 @@
 #include "label_common.h"
 #include <cstdint>
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

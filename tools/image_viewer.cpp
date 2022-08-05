@@ -41,6 +41,7 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/cloud_viewer.h>
 #include <pcl/visualization/image_viewer.h>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 int

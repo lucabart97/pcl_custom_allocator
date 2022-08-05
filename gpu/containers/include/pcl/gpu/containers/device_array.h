@@ -39,6 +39,7 @@
 #include <pcl/gpu/containers/device_memory.h>
 #include <pcl/pcl_exports.h>
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

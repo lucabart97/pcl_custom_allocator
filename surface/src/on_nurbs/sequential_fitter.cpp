@@ -434,25 +434,25 @@ SequentialFitter::getBoundaryError (std::vector<double> &error) const
 }
 
 void
-SequentialFitter::getInteriorParams (std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d> > &params) const
+SequentialFitter::getInteriorParams (std::vector<Eigen::Vector2d, tk::tk_allocator<Eigen::Vector2d> > &params) const
 {
   params = m_data.interior_param;
 }
 
 void
-SequentialFitter::getBoundaryParams (std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d> > &params) const
+SequentialFitter::getBoundaryParams (std::vector<Eigen::Vector2d, tk::tk_allocator<Eigen::Vector2d> > &params) const
 {
   params = m_data.boundary_param;
 }
 
 void
-SequentialFitter::getInteriorNormals (std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &normals) const
+SequentialFitter::getInteriorNormals (std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &normals) const
 {
   normals = m_data.interior_normals;
 }
 
 void
-SequentialFitter::getBoundaryNormals (std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > &normals) const
+SequentialFitter::getBoundaryNormals (std::vector<Eigen::Vector3d, tk::tk_allocator<Eigen::Vector3d> > &normals) const
 {
   normals = m_data.boundary_normals;
 }

@@ -48,6 +48,7 @@
 #include <memory>
 #include <string>
 #include <tuple>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <boost/lexical_cast.hpp> // for lexical_cast
 #include <boost/mpl/fold.hpp> // for fold

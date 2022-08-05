@@ -87,7 +87,7 @@ pcl::gpu::people::OrganizedPlaneDetector::process(const PointCloud<PointTC>::Con
   ne_.compute (*normal_cloud);
 
   // Segment Planes
-  std::vector<pcl::PlanarRegion<PointTC>, Eigen::aligned_allocator<pcl::PlanarRegion<PointTC> > > regions;
+  std::vector<pcl::PlanarRegion<PointTC>, tk::tk_allocator<pcl::PlanarRegion<PointTC> > > regions;
   std::vector<pcl::ModelCoefficients> model_coefficients;
   std::vector<pcl::PointIndices> inlier_indices;
   pcl::PointCloud<pcl::Label>::Ptr labels (new pcl::PointCloud<pcl::Label>);

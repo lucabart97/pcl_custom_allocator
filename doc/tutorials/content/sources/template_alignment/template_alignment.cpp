@@ -1,5 +1,6 @@
 #include <limits>
 #include <fstream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <Eigen/Core>
 #include <pcl/memory.h>
@@ -174,7 +175,7 @@ class TemplateAlignment
 
     // Align all of template clouds set by addTemplateCloud to the target specified by setTargetCloud ()
     void
-    alignAll (std::vector<TemplateAlignment::Result, Eigen::aligned_allocator<Result> > &results)
+    alignAll (std::vector<TemplateAlignment::Result, tk::tk_allocator<Result> > &results)
     {
       results.resize (templates_.size ());
       for (std::size_t i = 0; i < templates_.size (); ++i)
@@ -188,7 +189,7 @@ class TemplateAlignment
     findBestAlignment (TemplateAlignment::Result &result)
     {
       // Align all of the templates to the target cloud
-      std::vector<Result, Eigen::aligned_allocator<Result> > results;
+      std::vector<Result, tk::tk_allocator<Result> > results;
       alignAll (results);
 
       // Find the template with the best (lowest) fitness score

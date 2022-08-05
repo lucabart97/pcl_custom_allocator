@@ -89,7 +89,7 @@ public:
   using PointIndicesConstPtr = PointIndices::ConstPtr;
 
   using MatricesVector =
-      std::vector<Eigen::Matrix3d, Eigen::aligned_allocator<Eigen::Matrix3d>>;
+      std::vector<Eigen::Matrix3d, tk::tk_allocator<Eigen::Matrix3d>>;
   using MatricesVectorPtr = shared_ptr<MatricesVector>;
   using MatricesVectorConstPtr = shared_ptr<const MatricesVector>;
 

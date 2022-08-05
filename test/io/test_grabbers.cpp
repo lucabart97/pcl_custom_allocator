@@ -6,6 +6,7 @@
 
 #include <string>
 #include <thread>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <boost/filesystem.hpp> // for directory_iterator, extension
 #include <boost/algorithm/string/case_conv.hpp> // for to_upper_copy

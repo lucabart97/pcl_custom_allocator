@@ -51,6 +51,7 @@
 // #include <iostream>
 #include <limits>
 #include <list>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl

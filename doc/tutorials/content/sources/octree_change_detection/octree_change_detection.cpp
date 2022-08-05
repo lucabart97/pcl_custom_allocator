@@ -2,6 +2,7 @@
 #include <pcl/octree/octree_pointcloud_changedetector.h>
 
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <ctime>
 

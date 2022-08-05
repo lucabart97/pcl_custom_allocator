@@ -86,7 +86,7 @@ namespace pcl
   /** \brief overloaded << operator */
   PCL_EXPORTS std::ostream& operator << (std::ostream& os, const Correspondence& c);
 
-  using Correspondences = std::vector< pcl::Correspondence, Eigen::aligned_allocator<pcl::Correspondence> >;
+  using Correspondences = std::vector< pcl::Correspondence, tk::tk_allocator<pcl::Correspondence> >;
   using CorrespondencesPtr = shared_ptr<Correspondences>;
   using CorrespondencesConstPtr = shared_ptr<const Correspondences >;
 
@@ -121,7 +121,7 @@ namespace pcl
 
     PCL_MAKE_ALIGNED_OPERATOR_NEW
   };
-  using PointCorrespondences3DVector = std::vector<PointCorrespondence3D, Eigen::aligned_allocator<PointCorrespondence3D> >;
+  using PointCorrespondences3DVector = std::vector<PointCorrespondence3D, tk::tk_allocator<PointCorrespondence3D> >;
 
   /**
     * \brief Representation of a (possible) correspondence between two points (e.g. from feature matching),
@@ -135,7 +135,7 @@ namespace pcl
 
     PCL_MAKE_ALIGNED_OPERATOR_NEW
   };
-  using PointCorrespondences6DVector = std::vector<PointCorrespondence6D, Eigen::aligned_allocator<PointCorrespondence6D> >;
+  using PointCorrespondences6DVector = std::vector<PointCorrespondence6D, tk::tk_allocator<PointCorrespondence6D> >;
 
   /**
     * \brief Comparator to enable us to sort a vector of PointCorrespondences according to their scores using

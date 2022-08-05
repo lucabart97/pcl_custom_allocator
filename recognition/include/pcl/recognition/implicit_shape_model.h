@@ -35,6 +35,7 @@
 
 #pragma once
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <fstream>
 #include <Eigen/src/Core/Matrix.h>
@@ -104,7 +105,7 @@ namespace pcl
           * \param in_sigma
           */
         void
-        findStrongestPeaks (std::vector<ISMPeak, Eigen::aligned_allocator<ISMPeak> > &out_peaks, int in_class_id, double in_non_maxima_radius, double in_sigma);
+        findStrongestPeaks (std::vector<ISMPeak, tk::tk_allocator<ISMPeak> > &out_peaks, int in_class_id, double in_non_maxima_radius, double in_sigma);
 
         /** \brief Returns the density at the specified point.
           * \param[in] point point of interest
@@ -452,7 +453,7 @@ namespace pcl
           */
         bool
         extractDescriptors (std::vector<pcl::Histogram<FeatureSize> >& histograms,
-                            std::vector<LocationInfo, Eigen::aligned_allocator<LocationInfo> >& locations);
+                            std::vector<LocationInfo, tk::tk_allocator<LocationInfo> >& locations);
 
         /** \brief This method performs descriptor clustering.
           * \param[in] histograms descriptors to cluster
@@ -479,7 +480,7 @@ namespace pcl
           * \param[out] learned_weights stores the computed learned weights
           */
         void
-        calculateWeights (const std::vector< LocationInfo, Eigen::aligned_allocator<LocationInfo> >& locations,
+        calculateWeights (const std::vector< LocationInfo, tk::tk_allocator<LocationInfo> >& locations,
                           const Eigen::MatrixXi &labels,
                           std::vector<float>& sigmas,
                           std::vector<std::vector<unsigned int> >& clusters,
@@ -567,7 +568,7 @@ namespace pcl
           * \param[out] center it will the contain generated center
           */
         void
-        generateRandomCenter (const std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f> >& boxes, Eigen::VectorXf& center);
+        generateRandomCenter (const std::vector<Eigen::Vector2f, tk::tk_allocator<Eigen::Vector2f> >& boxes, Eigen::VectorXf& center);
 
         /** \brief Computes the square distance between two vectors.
           * \param[in] vec_1 first vector

@@ -100,7 +100,7 @@ pcl::simulation::SimExample::doSim(Eigen::Isometry3d pose_in)
     }
   }
 
-  std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> poses;
+  std::vector<Eigen::Isometry3d, tk::tk_allocator<Eigen::Isometry3d>> poses;
   std::vector<float> scores;
   poses.push_back(pose_in);
   rl_->computeLikelihoods(reference, poses, scores);

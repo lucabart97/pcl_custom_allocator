@@ -347,7 +347,7 @@ TEST (PCL, ConvexHull_2dsquare)
   Eigen::Vector4f plane_normal (0.0, 0.0, -1.0, 1.0);
 
   //Make sure they're actually near some edge
-  std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > facets;
+  std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > facets;
   facets.emplace_back(-1.0, 0.0, 0.0, 1.0);
   facets.emplace_back(-1.0, 0.0, 0.0, -1.0);
   facets.emplace_back(0.0, -1.0, 0.0, 1.0);
@@ -402,7 +402,7 @@ TEST (PCL, ConvexHull_3dcube)
   ASSERT_EQ (3, chull.getDimension ());
   
   //Make sure they're actually near some edge
-  std::vector<Eigen::Vector4f, Eigen::aligned_allocator<Eigen::Vector4f> > facets;
+  std::vector<Eigen::Vector4f, tk::tk_allocator<Eigen::Vector4f> > facets;
   facets.emplace_back(-1.0f, 0.0f, 0.0f, 1.0f);
   facets.emplace_back(-1.0f, 0.0f, 0.0f, -1.0f);
   facets.emplace_back(0.0f, -1.0f, 0.0f, 1.0f);

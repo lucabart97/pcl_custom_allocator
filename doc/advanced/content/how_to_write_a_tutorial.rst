@@ -76,7 +76,7 @@ documentation for, say *common/include/pcl/point_cloud.h*, and go to the
 element that you want to improve. Let's take *points* for example::
 
   /** \brief The point data. */
-  std::vector<PointT, Eigen::aligned_allocator<PointT> > points;
+  std::vector<PointT, tk::tk_allocator<PointT> > points;
 
 What you have to modify is the Doxygen-style comment starting with /\*\* and
 ending with \*/. See http://www.doxygen.org for more information.

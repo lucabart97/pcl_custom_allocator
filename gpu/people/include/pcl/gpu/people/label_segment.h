@@ -46,6 +46,7 @@
 #include "pcl/gpu/people/label_common.h"
 
 // std
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 // opencv drawing stuff
@@ -330,7 +331,7 @@ namespace pcl
          **/
         inline void sortIndicesToBlob2 ( const pcl::PointCloud<pcl::PointXYZ>&                       cloud_in,
                                   unsigned int                                                          sizeThres,
-                                  std::vector< std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >&  sorted,
+                                  std::vector< std::vector<Blob2, tk::tk_allocator<Blob2> > >&  sorted,
                                   std::vector< std::vector<pcl::PointIndices> >&                        indices)
         {
           assert(sorted.size () == indices.size ());
@@ -377,7 +378,7 @@ namespace pcl
          * @param[in] sorted the matrix of blobs
          * @return Zero if everything went well
          **/
-        inline int giveSortedBlobsInfo ( std::vector<std::vector<Blob2, Eigen::aligned_allocator<Blob2> > >& sorted)
+        inline int giveSortedBlobsInfo ( std::vector<std::vector<Blob2, tk::tk_allocator<Blob2> > >& sorted)
         {
           std::cout << "(I) : giveSortedBlobsInfo(): Size of outer vector: " << sorted.size() << std::endl;
           for(unsigned int i = 0; i < sorted.size(); i++)

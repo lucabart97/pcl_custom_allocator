@@ -38,6 +38,7 @@
 #ifndef _PCL_TEST_GPU_OCTREE_DATAGEN_
 #define _PCL_TEST_GPU_OCTREE_DATAGEN_
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <algorithm>
 #include <iostream>

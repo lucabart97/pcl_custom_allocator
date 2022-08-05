@@ -183,7 +183,7 @@ pcl::approximatePolygon2D(const typename pcl::PointCloud<PointT>::VectorType& po
 
   approx_polygon.reserve(result.size());
   if (refine) {
-    std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f>> lines(
+    std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f>> lines(
         result.size());
     std::reverse(result.begin(), result.end());
     for (std::size_t rIdx = 0; rIdx < result.size(); ++rIdx) {

@@ -44,6 +44,7 @@
 
 #include <pcl/compression/entropy_range_coder.h>
 #include <iostream>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <cstring>
 #include <algorithm>

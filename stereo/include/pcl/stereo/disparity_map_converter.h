@@ -40,6 +40,7 @@
 #include <pcl/point_types.h>
 
 #include <cstring>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {

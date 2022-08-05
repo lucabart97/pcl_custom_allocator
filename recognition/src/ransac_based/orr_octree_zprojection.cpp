@@ -45,6 +45,7 @@
 
 #include <pcl/recognition/ransac_based/orr_octree_zprojection.h>
 #include <array>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 

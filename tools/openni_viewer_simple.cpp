@@ -52,6 +52,7 @@
 #include <vtkImageImport.h>
 
 #include <mutex>
+#include <pcl/tk_allocator.h>
 #include <vector>
 #include <string>
 

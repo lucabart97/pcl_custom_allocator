@@ -279,7 +279,7 @@ main (int argc, char *argv[])
   //
   //  Actual Clustering
   //
-  std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > rototranslations;
+  std::vector<Eigen::Matrix4f, tk::tk_allocator<Eigen::Matrix4f> > rototranslations;
   std::vector<pcl::Correspondences> clustered_corrs;
 
   //  Using Hough3D

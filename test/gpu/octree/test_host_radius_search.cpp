@@ -36,6 +36,7 @@
 
 #include <numeric>
 #include <algorithm>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <gtest/gtest.h>

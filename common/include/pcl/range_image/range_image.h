@@ -56,7 +56,7 @@ namespace pcl
     public:
       // =====TYPEDEFS=====
       using BaseClass = pcl::PointCloud<PointWithRange>;
-      using VectorOfEigenVector3f = std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Eigen::Vector3f> >;
+      using VectorOfEigenVector3f = std::vector<Eigen::Vector3f, tk::tk_allocator<Eigen::Vector3f> >;
       using Ptr = shared_ptr<RangeImage>;
       using ConstPtr = shared_ptr<const RangeImage>;
 

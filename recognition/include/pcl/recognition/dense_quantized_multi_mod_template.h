@@ -37,6 +37,7 @@
 
 #pragma once
 
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 #include <pcl/recognition/region_xy.h>

@@ -45,6 +45,7 @@
 
 #include <cstring>
 #include <iostream> // for size_t, operator<<, endl, cout
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl {
