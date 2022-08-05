@@ -25,7 +25,7 @@ find_path(GTEST_SRC_DIR src/gtest-all.cc
     PATHS "$ENV{PROGRAMFILES}/gtest" "$ENV{PROGRAMW6432}/gtest"
     PATHS "$ENV{PROGRAMFILES}/gtest-1.7.0" "$ENV{PROGRAMW6432}/gtest-1.7.0"
     PATH /usr/src/googletest/googletest
-    PATH /usr/src/gtest
+    #PATH /usr/src/gtest
     PATH_SUFFIXES gtest src/gtest googletest/googletest)
 
 set(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR})
