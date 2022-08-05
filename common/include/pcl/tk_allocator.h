@@ -6,6 +6,8 @@
 #include <cassert>
 #define assertm(exp, msg) assert(((void)msg, exp))
 
+#define TK_CUSTOM_ALLOCATOR
+
 namespace tk {
 
 template <class T>
