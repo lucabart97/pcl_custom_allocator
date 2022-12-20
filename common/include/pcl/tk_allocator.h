@@ -6,8 +6,6 @@
 #include <cassert>
 #define assertm(exp, msg) assert(((void)msg, exp))
 
-#define TK_CUSTOM_ALLOCATOR
-
 namespace tk {
 
 template <class T>
@@ -84,8 +82,26 @@ public:
       Eigen::internal::aligned_free(p);
     }
   }
+
+  template <class U, class... Args>
+  void
+  construct(U* p, Args&&... args)
+  {
+    if (dataMapped == nullptr) {
+      std::allocator<T>::construct(p, std::forward<Args>(args)...);
+    }
+  }
+
+  template <class U>
+  void
+  destroy(U* p)
+  {
+    if (dataMapped == nullptr) {
+      std::allocator<T>::destroy(p);
+    }
+  }
 };
 
-} // namespace pcl
+} // namespace tk
 
 #endif /* COMMON_INCLUDE_PCL_TK_ALLOCATOR */
