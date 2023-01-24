@@ -11,10 +11,15 @@ if(NOT build)
   return()
 endif()
 
-find_package(GTestSource REQUIRED)
+# find_package(GTestSource REQUIRED)
+# include_directories(SYSTEM ${GTEST_INCLUDE_DIRS} ${GTEST_SRC_DIR})
+
+# add_library(pcl_gtest STATIC ${GTEST_SRC_DIR}/src/gtest-all.cc)
+find_package(GTest REQUIRED)
 include_directories(SYSTEM ${GTEST_INCLUDE_DIRS} ${GTEST_SRC_DIR})
 
-add_library(pcl_gtest STATIC ${GTEST_SRC_DIR}/src/gtest-all.cc)
+add_library(pcl_gtest INTERFACE)
+target_link_libraries(pcl_gtest INTERFACE GTest::gtest GTest::gtest_main)
 
 enable_testing()
 
