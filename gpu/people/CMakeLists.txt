@@ -14,6 +14,9 @@ if(NOT build)
   return()
 endif()
 
+find_package(CUDA  REQUIRED)
+include_directories("${CUDA_INCLUDE_DIRS}")
+
 #find NPP
 unset(CUDA_npp_LIBRARY CACHE)
 find_cuda_helper_libs(nppc)

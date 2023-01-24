@@ -13,6 +13,9 @@ if(NOT build)
   return()
 endif()
 
+find_package(CUDA  REQUIRED)
+include_directories("${CUDA_INCLUDE_DIRS}")
+
 file(GLOB incs include/pcl/gpu/kinfu_large_scale/*.h*)
 file(GLOB impl_incs include/pcl/gpu/kinfu_large_scale/impl/*.h*)
 file(GLOB srcs src/*.cpp src/*.h*)

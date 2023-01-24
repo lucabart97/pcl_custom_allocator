@@ -13,6 +13,9 @@ if(NOT build)
   return()
 endif()
 
+find_package(CUDA  REQUIRED)
+include_directories("${CUDA_INCLUDE_DIRS}")
+
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 file(GLOB hdrs "*.h*")
