@@ -52,7 +52,7 @@ namespace pcl
     {
 
       public:
-        using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
+        using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT> >;
 
         OutofcoreAbstractNodeContainer () 
           : container_ ()

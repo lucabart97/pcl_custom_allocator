@@ -104,7 +104,7 @@ public:
       const OctreePointCloud<PointT, LeafContainerT, BranchContainerT, OctreeT>>;
 
   // Eigen aligned allocator
-  using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT>>;
+  using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT>>;
   using AlignedPointXYZVector =
       std::vector<PointXYZ, Eigen::aligned_allocator<PointXYZ>>;
 

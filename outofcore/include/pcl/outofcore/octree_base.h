@@ -185,7 +185,7 @@ namespace pcl
         using PointCloudPtr = typename PointCloud::Ptr;
         using PointCloudConstPtr = typename PointCloud::ConstPtr;
 
-        using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
+        using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT> >;
 
         // Constructors
         // -----------------------------------------------------------------------

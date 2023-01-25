@@ -108,11 +108,11 @@ pcl::keypoints::agast::AbstractAgastDetector::applyNonMaxSuppression (
 {
   std::vector<int> nms_flags;
 
-  const std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners_all = input.points;
-  std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners_nms = output.points;
+  const std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners_all = input.points;
+  std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners_nms = output.points;
 
   int lastRow = 0, next_lastRow = 0;
-  std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> >::const_iterator curr_corner;
+  std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> >::const_iterator curr_corner;
   int lastRowCorner_ind = 0, next_lastRowCorner_ind = 0;
   std::vector<int>::iterator nms_flags_p;
   int num_corners_all = int (corners_all.size ());
@@ -296,7 +296,7 @@ pcl::keypoints::agast::AbstractAgastDetector::applyNonMaxSuppression (
 void
 pcl::keypoints::agast::AbstractAgastDetector::computeCornerScores (
   const unsigned char* im,
-  const std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > &corners_all,
+  const std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > &corners_all,
   std::vector<ScoreIndex> &scores) const
 {
   auto num_corners = static_cast<unsigned int> (corners_all.size ());
@@ -326,7 +326,7 @@ pcl::keypoints::agast::AbstractAgastDetector::computeCornerScores (
 void
 pcl::keypoints::agast::AbstractAgastDetector::computeCornerScores (
   const float* im,
-  const std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > &corners_all,
+  const std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > &corners_all,
   std::vector<ScoreIndex> &scores) const
 {
   auto num_corners = static_cast<unsigned int> (corners_all.size ());
@@ -370,7 +370,7 @@ namespace pcl
           int img_width, int img_height,
           double threshold,
           const std::array<std::int_fast16_t, 12> &offset,
-          std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> >& corners)
+          std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> >& corners)
       {
         int total = 0;
         int n_expected_corners = int (corners.capacity ());
@@ -3521,14 +3521,14 @@ pcl::keypoints::agast::AgastDetector7_12s::initPattern ()
 
 /////////////////////////////////////////////////////////////////////////////////////////
 void
-pcl::keypoints::agast::AgastDetector7_12s::detect (const unsigned char* im, std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners) const
+pcl::keypoints::agast::AgastDetector7_12s::detect (const unsigned char* im, std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners) const
 {
   return (AgastDetector7_12s_detect<unsigned char, int> (im, int (width_), int (height_), threshold_, offset_, corners));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 void
-pcl::keypoints::agast::AgastDetector7_12s::detect (const float* im, std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners) const
+pcl::keypoints::agast::AgastDetector7_12s::detect (const float* im, std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners) const
 {
   return (AgastDetector7_12s_detect<float, float> (im, int (width_), int (height_), threshold_, offset_, corners));
 }
@@ -3564,7 +3564,7 @@ namespace pcl
           int img_width, int img_height,
           double threshold,
           const std::array<std::int_fast16_t, 8> &offset,
-          std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> >& corners)
+          std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> >& corners)
       {
         int total = 0;
         int n_expected_corners = int (corners.capacity ());
@@ -4496,14 +4496,14 @@ pcl::keypoints::agast::AgastDetector5_8::initPattern ()
 
 /////////////////////////////////////////////////////////////////////////////////////////
 void
-pcl::keypoints::agast::AgastDetector5_8::detect (const unsigned char* im, std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners) const
+pcl::keypoints::agast::AgastDetector5_8::detect (const unsigned char* im, std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners) const
 {
   return (AgastDetector5_8_detect<unsigned char, int> (im, int (width_), int (height_), threshold_, offset_, corners));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 void
-pcl::keypoints::agast::AgastDetector5_8::detect (const float* im, std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners) const
+pcl::keypoints::agast::AgastDetector5_8::detect (const float* im, std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners) const
 {
   return (AgastDetector5_8_detect<float, float> (im, int (width_), int (height_), threshold_, offset_, corners));
 }
@@ -4539,7 +4539,7 @@ namespace pcl
           int img_width, int img_height,
           double threshold,
           const std::array<std::int_fast16_t, 16> offset,
-          std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> >& corners)
+          std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> >& corners)
       {
         int total = 0;
         int n_expected_corners = int (corners.capacity ());
@@ -8742,14 +8742,14 @@ pcl::keypoints::agast::OastDetector9_16::initPattern ()
 
 /////////////////////////////////////////////////////////////////////////////////////////
 void
-pcl::keypoints::agast::OastDetector9_16::detect (const unsigned char* im, std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners) const
+pcl::keypoints::agast::OastDetector9_16::detect (const unsigned char* im, std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners) const
 {
   return (OastDetector9_16_detect<unsigned char, int> (im, int (width_), int (height_), threshold_, offset_, corners));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 void
-pcl::keypoints::agast::OastDetector9_16::detect (const float* im, std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > & corners) const
+pcl::keypoints::agast::OastDetector9_16::detect (const float* im, std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > & corners) const
 {
   return (OastDetector9_16_detect<float, float> (im, int (width_), int (height_), threshold_, offset_, corners));
 }

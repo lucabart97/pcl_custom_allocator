@@ -275,7 +275,7 @@ namespace pcl
             * \param[out] keypoints the AGAST keypoints
             */
           void 
-          getAgastPoints (std::uint8_t threshold, std::vector<pcl::PointUV, Eigen::aligned_allocator<pcl::PointUV> > &keypoints);
+          getAgastPoints (std::uint8_t threshold, std::vector<pcl::PointUV, tk::tk_allocator<pcl::PointUV> > &keypoints);
 
           // get scores - attention, this is in layer coordinates, not scale=1 coordinates!
           /** \brief Get the AGAST keypoint score for a given pixel using a threshold
@@ -412,7 +412,7 @@ namespace pcl
             */
           void 
           getKeypoints (const int threshold, 
-                        std::vector<pcl::PointWithScale, Eigen::aligned_allocator<pcl::PointWithScale> >  &keypoints);
+                        std::vector<pcl::PointWithScale, tk::tk_allocator<pcl::PointWithScale> >  &keypoints);
 
         protected:
           /** Nonmax suppression. */

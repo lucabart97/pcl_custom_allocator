@@ -109,7 +109,7 @@ namespace pcl
         using octree_disk = OutofcoreOctreeBase<OutofcoreOctreeDiskContainer < PointT > , PointT >;
         using octree_disk_node = OutofcoreOctreeBaseNode<OutofcoreOctreeDiskContainer < PointT > , PointT >;
 
-        using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
+        using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT> >;
 
         using node_type_t = pcl::octree::node_type_t;
 

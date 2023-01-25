@@ -53,6 +53,7 @@
 #include <pcl/console/print.h>  // for PCL_WARN
 
 #include <utility>
+#include <pcl/tk_allocator.h>
 #include <vector>
 
 namespace pcl
@@ -392,7 +393,7 @@ namespace pcl
       pcl::PCLHeader header;
 
       /** \brief The point data. */
-      std::vector<PointT, Eigen::aligned_allocator<PointT> > points;
+      std::vector<PointT, tk::tk_allocator<PointT> > points;
 
       /** \brief The point cloud width (if organized as an image-structure). */
       std::uint32_t width = 0;
@@ -408,8 +409,8 @@ namespace pcl
       Eigen::Quaternionf sensor_orientation_ = Eigen::Quaternionf::Identity ();
 
       using PointType = PointT;  // Make the template class available from the outside
-      using VectorType = std::vector<PointT, Eigen::aligned_allocator<PointT> >;
-      using CloudVectorType = std::vector<PointCloud<PointT>, Eigen::aligned_allocator<PointCloud<PointT> > >;
+      using VectorType = std::vector<PointT, tk::tk_allocator<PointT> >;
+      using CloudVectorType = std::vector<PointCloud<PointT>, tk::tk_allocator<PointCloud<PointT> > >;
       using Ptr = shared_ptr<PointCloud<PointT> >;
       using ConstPtr = shared_ptr<const PointCloud<PointT> >;
 

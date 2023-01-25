@@ -72,7 +72,7 @@ public:
       const OctreePointCloudSearch<PointT, LeafContainerT, BranchContainerT>>;
 
   // Eigen aligned allocator
-  using AlignedPointTVector = std::vector<PointT, Eigen::aligned_allocator<PointT>>;
+  using AlignedPointTVector = std::vector<PointT, tk::tk_allocator<PointT>>;
 
   using OctreeT = OctreePointCloud<PointT, LeafContainerT, BranchContainerT>;
   using LeafNode = typename OctreeT::LeafNode;
