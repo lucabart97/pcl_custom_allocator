@@ -15,6 +15,8 @@
 # Set default policy behavior similar to minimum requirement version
 cmake_policy(VERSION 3.10)
 
+set(PCL_ZERO_COPY "true")
+
 # explicitly set policies we already support in newer cmake versions
 if(POLICY CMP0074)
   # TODO: update *_ROOT variables to be PCL_*_ROOT or equivalent.
