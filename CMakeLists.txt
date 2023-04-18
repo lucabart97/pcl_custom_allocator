@@ -96,16 +96,16 @@ if(CMAKE_TIMING_VERBOSE AND UNIX)
 endif()
 
 # check for SSE flags
-include("${PCL_SOURCE_DIR}/cmake/pcl_find_sse.cmake")
-if(PCL_ENABLE_SSE AND "${CMAKE_CXX_FLAGS}" STREQUAL "${CMAKE_CXX_FLAGS_DEFAULT}")
-  PCL_CHECK_FOR_SSE()
-endif()
+# include("${PCL_SOURCE_DIR}/cmake/pcl_find_sse.cmake")
+# if(PCL_ENABLE_SSE AND "${CMAKE_CXX_FLAGS}" STREQUAL "${CMAKE_CXX_FLAGS_DEFAULT}")
+#   PCL_CHECK_FOR_SSE()
+# endif()
 
 # check for AVX flags
-if(PCL_ENABLE_AVX AND "${CMAKE_CXX_FLAGS}" STREQUAL "${CMAKE_CXX_FLAGS_DEFAULT}")
-  include("${PCL_SOURCE_DIR}/cmake/pcl_find_avx.cmake")
-  PCL_CHECK_FOR_AVX()
-endif()
+# if(PCL_ENABLE_AVX AND "${CMAKE_CXX_FLAGS}" STREQUAL "${CMAKE_CXX_FLAGS_DEFAULT}")
+#   include("${PCL_SOURCE_DIR}/cmake/pcl_find_avx.cmake")
+#   PCL_CHECK_FOR_AVX()
+# endif()
 
 # ---[ Unix/Darwin/Windows specific flags
 if(CMAKE_COMPILER_IS_GNUCXX)
